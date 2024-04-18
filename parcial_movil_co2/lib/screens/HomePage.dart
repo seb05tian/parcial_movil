@@ -268,7 +268,7 @@ class Homepage extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 660.0,
+            bottom: 600.0,
             left: 20.0,
             right: 20.0,
             child: GestureDetector(
