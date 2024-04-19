@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:parcial_movil_co2/screens/HomePage.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+class CustomAppBar2 extends StatelessWidget implements PreferredSizeWidget {
   final BuildContext context; // Agregamos el parámetro de contexto
 
-  const CustomAppBar({super.key, required this.context});
+  const CustomAppBar2({super.key, required this.context});
 
   @override
   Size get preferredSize =>
@@ -23,7 +24,23 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           child: Column(
             children: [
               Titulo(),
-              
+              Row(
+                children: [
+                  Container(
+                    child: IconButton(
+                      onPressed: () {
+                     Navigator.pushReplacementNamed(context, Homepage.routename);
+
+                      },
+                      icon: Icon(
+                        Icons.arrow_back,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               Divider(),
               SizedBox(height: 5),
               Perfil(),

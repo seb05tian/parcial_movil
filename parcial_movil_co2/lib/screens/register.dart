@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parcial_movil_co2/screens/login.dart';
 
 class register extends StatelessWidget {
   static const String routename = "register";
@@ -199,7 +200,7 @@ class register extends StatelessWidget {
               ),
               child: TextButton(
                 onPressed: () {
-                  // Aquí iría la lógica para iniciar sesión
+                  Navigator.pushReplacementNamed(context, login.routename);
                 },
                 child: Text(
                   'Finalizar registro',

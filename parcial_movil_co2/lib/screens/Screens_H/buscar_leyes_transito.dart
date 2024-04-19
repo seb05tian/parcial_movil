@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar.dart';
+
+import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar2.dart';
 
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/buscador/message_field_box.dart';
 
@@ -13,7 +14,7 @@ class BuscarLeyes extends StatelessWidget {
     var screenSizeFont = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        appBar: const CustomAppBar(),
+        appBar: CustomAppBar2(context: context),
         body: SizedBox(
           width: screenWidth,
           child: Column(

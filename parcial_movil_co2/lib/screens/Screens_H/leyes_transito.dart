@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar.dart';
+
+import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar2.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/botones/botones.dart';
 
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/cajasTexto/cajaDescripcion.dart';
@@ -14,7 +15,7 @@ class LeyesTransito extends StatelessWidget {
     var screenWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        appBar: const CustomAppBar(),
+         appBar: CustomAppBar2(context: context),
         body: SingleChildScrollView(
           child: Container(
             margin: const EdgeInsets.all(10),

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar.dart';
+
+import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar2.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/botones/botones.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/buscador/message_field_box.dart';
 
 class ListAbogado extends StatelessWidget {
   
   static const String routename = "ListAbogado";
-
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
@@ -14,7 +14,7 @@ class ListAbogado extends StatelessWidget {
     var screenSizeFont = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        appBar: const CustomAppBar(),
+        appBar: CustomAppBar2(context: context),
         body: SizedBox(
           width: screenWidth,
           child: Column(
@@ -90,18 +90,30 @@ class ListAbogado extends StatelessWidget {
                                 children: [
                                   Container(
                                     decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(40),
-                                        border: Border.all(
-                                            width: 2,
-                                            color: const Color(0xFF392B54)),
-                                        color: const Color(0xFF392B54)),
-                                    padding: const EdgeInsets.all(4),
+                                      borderRadius: BorderRadius.circular(50),
+                                      border: Border.all(
+                                        width: 1,
+                                        color: const Color(0xFF392B54),
+                                      ),
+                                      color: const Color(0xFF392B54),
+                                    ),
+
                                     width: screenWidth * 0.25,
                                     height: screenHeight *
                                         0.19, // Esto también ocupará la mitad del ancho del Row
-                                    // Aquí puedes colocar tu imagen en lugar de un contenedor vacío
-                                    child:
-                                        const Placeholder(), // Placeholder es solo para demostración, reemplázalo con tu imagen
+                                    child: CircleAvatar(
+                                      radius: screenWidth *
+                                          0.125, // El radio del CircleAvatar es la mitad del ancho del contenedor
+                                      backgroundColor: Colors
+                                          .transparent, // Establece el color de fondo transparente
+                                      child: ClipOval(
+                                        child: Image.asset(
+                                          'assets/img/abogado.png',
+                                          fit: BoxFit
+                                              .cover, // Ajusta la imagen para que cubra el área del círculo
+                                        ),
+                                      ),
+                                    ),
                                   ),
                                   Column(
                                     children: [
