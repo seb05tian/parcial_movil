@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:parcial_movil_co2/screens/HomePage.dart';
+import 'package:parcial_movil_co2/screens/Screens_H/editar_perfil.dart';
 import 'package:parcial_movil_co2/screens/derechos_deberes.dart';
 import 'package:parcial_movil_co2/screens/jurisdiccion.dart';
 import 'package:parcial_movil_co2/screens/notificaciones.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: jurisdiccion(),
+      home: editar_perfil(),
     );
   }
 }
