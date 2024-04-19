@@ -8,11 +8,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:parcial_movil_co2/MyApp.dart';
-<<<<<<< HEAD
-=======
-
-import 'package:parcial_movil_co2/main.dart';
->>>>>>> bd151ca1e2486ba54f0d91a3060385c7f6bac510
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {

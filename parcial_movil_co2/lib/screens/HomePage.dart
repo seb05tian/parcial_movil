@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar.dart';
 
 class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const CustomAppBar(),
       body: Stack(
         children: [
           Container(
@@ -16,54 +18,7 @@ class Homepage extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            height: 200.0,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Color(0xFF392B54),
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(40.0),
-                  bottomRight: Radius.circular(40.0),
-                ),
-              ),
-              child: Image.asset(
-                'assets/img/ya.png',
-                height: 280.0,
-                width: 400.0,
-              ),
-            ),
-          ),
-          Positioned(
-            top: 100.0,
-            left: -10,
-            right: -10,
-            child: Divider(
-              color: Colors.grey,
-              thickness: 1.0,
-              height: 10.0,
-              indent: 20.0,
-              endIndent: 20.0,
-            ),
-          ),
-          Positioned(
-            top: 40.0,
-            left: 0,
-            right: 0,
-            child: Center(
-              child: Text(
-                'TransitoNet',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 40.0,
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            top: 340.0,
+            top: 170.0,
             left: 15.0,
             right: 15.0,
             height: 240.0,
@@ -260,45 +215,6 @@ class Homepage extends StatelessWidget {
                             ),
                           ],
                         ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: 660.0,
-            left: 20.0,
-            right: 20.0,
-            child: GestureDetector(
-              onTap: () {
-                // Navegar a otra página cuando se toque el texto
-                print('Navigate to another page');
-              },
-              child: Row(
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(color: Colors.white, width: 2.0),
-                    ),
-                    child: CircleAvatar(
-                      radius: 30.0,
-                      backgroundImage: AssetImage('assets/img/abogado.png'),
-                    ),
-                  ),
-                  SizedBox(width: 5.0),
-                  Column(
-                    children: [
-                      Text(
-                        'Hola, Sebastian',
-                        style: TextStyle(color: Colors.white, fontSize: 20.0),
-                      ),
-                      SizedBox(height: 5.0),
-                      Text(
-                        '¿Qué quieres hacer hoy?',
-                        style: TextStyle(color: Colors.white, fontSize: 14.0),
                       ),
                     ],
                   ),

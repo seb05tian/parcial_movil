@@ -1,173 +1,91 @@
 import 'package:flutter/material.dart';
-import 'package:parcial_movil_co2/screens/Screens_H/appbar/custon_appBar.dart';
+import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar.dart';
+import 'package:parcial_movil_co2/screens/Screens_H/configuracion/botones/botones.dart';
+
+import 'package:parcial_movil_co2/screens/Screens_H/configuracion/cajasTexto/cajaDescripcion.dart';
 
 class LeyesTransito extends StatelessWidget {
-  const LeyesTransito({super.key});
+  const LeyesTransito({Key? key});
 
   @override
   Widget build(BuildContext context) {
+    var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
     return SafeArea(
-        child: Scaffold(
-      appBar: const CustomAppBar(),
-      body: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                margin: const EdgeInsets.only(top: 30),
-                child: const Text(
-                  'B10',
-                  style: TextStyle(
-                    color: Color(0xFF392B54),
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30.0,
+      child: Scaffold(
+        appBar: const CustomAppBar(),
+        body: SingleChildScrollView(
+          child: Container(
+            margin: const EdgeInsets.all(10),
+            width: screenWidth,
+            decoration: BoxDecoration(
+              border: Border.all(
+                  width: 2, color: const Color.fromARGB(255, 2, 0, 0)),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(top: 20),
+                  child: const Text(
+                    'B10',
+                    style: TextStyle(
+                      color: Color(0xFF392B54),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30.0,
+                    ),
                   ),
                 ),
-              )
-            ],
+                const SizedBox(height: 10),
+                CajaDescripcion(
+                    titulo: 'Descripcion',
+                    contenido:
+                        'kansldkasijdlak dksjandlkabidnsalkmdbiasom dlajndoaodksa',
+                    screenWidth: screenWidth,
+                    screenHeight: screenHeight),
+                const SizedBox(
+                  height: 20,
+                ),
+                CajaDescripcion(
+                    titulo: 'Procesos Legales',
+                    contenido:
+                        'kansldkasijdlak dkklmslkcnkdjasdkfbaskk sajdsdusad sdsiudosdosid soidnsod sodns dsudsa jdsnadmasoj duh asidsiaj osimdojdosmadjandisa skjnds dkjks disijd asu diaj ds adioidsnof s fiuos dfoj 9fsj kjsdskdnlad dsijadnsndniaus djsaidskjn sk dijukdojspd osd sod s dojs dsoj dsdk sld sdd skldsjandlkabidnsalkmdbiasom dlajndoaodksa',
+                    screenWidth: screenWidth,
+                    screenHeight: screenHeight),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: screenWidth * 0.8,
+                      height: screenHeight * 0.08,
+                      decoration: BoxDecoration(
+                          border: Border.all(width: 2, color: Colors.green)),
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Button(
+                            titulo: 'Juridiccion',
+                            color: Color(0xFF392B54),
+                          ),
+                          SizedBox(
+                            width: 0,
+                          ),
+                          Button(
+                              titulo: 'Asesoria Legal',
+                              color: Color.fromARGB(255, 139, 75, 223))
+                        ],
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
           ),
-          const TextBox(
-            width: 300,
-            height: 150,
-            titulo: 'Descripcion',
-            contenido:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ddsdsdsd dsdsdd sfjusto et cursus posuere',
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          const TextBox(
-            width: 300,
-            height: 250,
-            titulo: 'Descripcion',
-            contenido:
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit  Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elit. ddsdsdsd dsdsdd sfjusto et cursus posuere',
-          ),
-          const SizedBox(
-            height: 40,
-          ),
-          const Row(
-            children: [
-              Button(
-                titulo: 'Juridiccion',
-                color: Color(0xFF392B54),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Button(
-                  titulo: 'Asesoria Legal',
-                  color: Color.fromARGB(255, 139, 75, 223))
-            ],
-          )
-        ],
+        ),
       ),
-    ));
-  }
-}
-
-class Button extends StatelessWidget {
-  final String titulo;
-  final Color color;
-  const Button({
-    super.key,
-    required this.titulo,
-    required this.color,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          margin: const EdgeInsets.only(left: 50),
-          child: ElevatedButton(
-            onPressed: () {},
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(
-                  color), // Color de fondo del botón
-            ),
-            child: Text(
-              titulo,
-              style: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        )
-      ],
-    );
-  }
-}
-
-class TextBox extends StatelessWidget {
-  final double width;
-  final double height;
-  final String titulo;
-  final String contenido;
-
-  const TextBox({
-    super.key,
-    required this.width,
-    required this.height,
-    required this.titulo,
-    required this.contenido,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          width: width,
-          height: height,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: Colors.white, // Color sólido del Container
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(
-                    0.7), // Color de la sombra con opacidad reducida
-                spreadRadius: 1, // Radio de difusión de la sombra
-                blurRadius: 5, // Radio de desenfoque de la sombra
-                offset: const Offset(
-                  4,
-                  4,
-                ), // Desplazamiento hacia la derecha y hacia abajo
-              ),
-            ],
-          ),
-          child: Column(
-            children: [
-              Container(
-                margin: const EdgeInsets.only(top: 10),
-                child: Text(
-                  titulo,
-                  style: const TextStyle(
-                    color: Color(0xFF392B54),
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18.0,
-                  ),
-                ),
-              ),
-              const Divider(),
-              Container(
-                margin: const EdgeInsets.all(10),
-                child: Text(
-                  contenido,
-                  style: const TextStyle(
-                    color: Color(0xFF392B54),
-                    fontSize: 15.0,
-                  ),
-                ),
-              )
-            ],
-          ),
-        )
-      ],
     );
   }
 }
