@@ -1,30 +1,54 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key});
+  final BuildContext context; // Agregamos el parámetro de contexto
+
+  const CustomAppBar({super.key, required this.context});
 
   @override
-  Size get preferredSize => const Size.fromHeight(230);
+  Size get preferredSize =>
+      Size.fromHeight(MediaQuery.of(context).size.height * 0.4);
 
   @override
   Widget build(BuildContext context) {
+    var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
+    var screenSizeFont = MediaQuery.of(context).size.height;
     return Container(
       decoration: _boxDecoration(),
-      child: const SafeArea(
-        child: Column(
-          children: [
-            Titulo(),
-            Divider(),
-            SizedBox(height: 5),
-            Perfil(),
-          ],
+      child: SafeArea(
+        child: Container(
+          height: screenHeight * 0.3,
+          width: screenWidth * 0.95,
+          child: Column(
+            children: [
+              Titulo(),
+              Row(
+                children: [
+                  Container(
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.arrow_back,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Divider(),
+              SizedBox(height: screenHeight * 0.01),
+              Perfil(),
+            ],
+          ),
         ),
       ),
     );
   }
 
   BoxDecoration _boxDecoration() {
-    return const BoxDecoration(
+    return BoxDecoration(
       borderRadius: BorderRadius.vertical(
         bottom: Radius.circular(30),
       ),
@@ -34,9 +58,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 class Perfil extends StatelessWidget {
-  const Perfil({
-    super.key,
-  });
+  const Perfil({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -83,9 +105,7 @@ class Perfil extends StatelessWidget {
 }
 
 class Titulo extends StatelessWidget {
-  const Titulo({
-    super.key,
-  });
+  const Titulo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +113,7 @@ class Titulo extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          margin: const EdgeInsets.only(top: 70),
+          padding: EdgeInsets.only(top: 60),
           child: const Text(
             'TransitoNet',
             style: TextStyle(

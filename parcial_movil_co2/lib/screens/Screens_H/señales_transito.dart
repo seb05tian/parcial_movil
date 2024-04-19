@@ -12,7 +12,7 @@ class SenalesTransito extends StatelessWidget {
     var screenSizeFont = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        appBar: const CustomAppBar(),
+        appBar: CustomAppBar(context: context),
         body: SizedBox(
           width: screenWidth,
           child: Column(

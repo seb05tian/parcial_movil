@@ -6,7 +6,7 @@ class notificaciones extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(context: context),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(

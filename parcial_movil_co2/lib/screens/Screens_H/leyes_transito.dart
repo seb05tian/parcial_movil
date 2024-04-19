@@ -13,7 +13,7 @@ class LeyesTransito extends StatelessWidget {
     var screenWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        appBar: const CustomAppBar(),
+        appBar: CustomAppBar(context: context),
         body: SingleChildScrollView(
           child: Container(
             margin: const EdgeInsets.all(10),
