@@ -9,7 +9,7 @@ class CustomAppBar2 extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize =>
-      Size.fromHeight(MediaQuery.of(context).size.height * 0.4);
+      Size.fromHeight(MediaQuery.of(context).size.height * 0.3);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class CustomAppBar2 extends StatelessWidget implements PreferredSizeWidget {
       decoration: _boxDecoration(),
       child: SafeArea(
         child: Container(
-          height: screenHeight * 0.3,
+          height: screenHeight * 0.35,
           width: screenWidth * 0.95,
           child: Column(
             children: [
@@ -117,7 +117,7 @@ class Titulo extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          padding: const EdgeInsets.only(top: 60),
+          padding: const EdgeInsets.only(top: 30),
           child: const Text(
             'TransitoNet',
             style: TextStyle(

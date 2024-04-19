@@ -21,10 +21,7 @@ class LeyesTransito extends StatelessWidget {
           child: Container(
             margin: const EdgeInsets.all(10),
             width: screenWidth,
-            decoration: BoxDecoration(
-              border: Border.all(
-                  width: 2, color: const Color.fromARGB(255, 2, 0, 0)),
-            ),
+            
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -64,8 +61,7 @@ class LeyesTransito extends StatelessWidget {
                     Container(
                       width: screenWidth * 0.8,
                       height: screenHeight * 0.08,
-                      decoration: BoxDecoration(
-                          border: Border.all(width: 2, color: Colors.green)),
+                      
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [

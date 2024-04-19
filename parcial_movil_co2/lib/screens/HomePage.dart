@@ -25,11 +25,12 @@ class Homepage extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 170.0,
+            top: 110.0,
             left: 15.0,
             right: 15.0,
-            height: 240.0,
+            height: 290.0,
             child: Container(
+              
               width: 100.0,
               decoration: BoxDecoration(
                 color: Colors.white,

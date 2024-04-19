@@ -19,7 +19,7 @@ class CajaDescripcion extends StatelessWidget {
     return Container(
       width: screenWidth * 0.8,
       decoration: BoxDecoration(
-        border: Border.all(width: 2, color: Colors.red),
+        
         borderRadius: BorderRadius.circular(10),
         color: Colors.white,
         boxShadow: [
@@ -36,10 +36,7 @@ class CajaDescripcion extends StatelessWidget {
           Container(
             height: screenHeight * 0.04,
             width: screenWidth * 0.6,
-            decoration: BoxDecoration(
-              border:
-                  Border.all(width: 2, color: Color.fromARGB(255, 255, 4, 201)),
-            ),
+            
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -57,9 +54,7 @@ class CajaDescripcion extends StatelessWidget {
           const Divider(),
           Container(
             padding: const EdgeInsets.all(2),
-            decoration: BoxDecoration(
-              border: Border.all(width: 2, color: Colors.yellow),
-            ),
+            
             child: Row(
               children: [
                 Expanded(
