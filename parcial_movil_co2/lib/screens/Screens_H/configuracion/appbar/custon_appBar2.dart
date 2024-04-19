@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:parcial_movil_co2/screens/HomePage.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/editar_perfil.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+class CustomAppBar2 extends StatelessWidget implements PreferredSizeWidget {
   final BuildContext context; // Agregamos el parámetro de contexto
 
-  const CustomAppBar({super.key, required this.context});
+  const CustomAppBar2({super.key, required this.context});
 
   @override
   Size get preferredSize =>
@@ -18,14 +19,31 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return Container(
       decoration: _boxDecoration(),
       child: SafeArea(
-        child: SizedBox(
+        child: Container(
           height: screenHeight * 0.3,
           width: screenWidth * 0.95,
           child: Column(
             children: [
               const Titulo(),
+              Row(
+                children: [
+                  Container(
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(
+                            context, Homepage.routename);
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               const Divider(),
-              SizedBox(height: screenHeight * 0.01),
+              const SizedBox(height: 5),
               const Perfil(),
             ],
           ),

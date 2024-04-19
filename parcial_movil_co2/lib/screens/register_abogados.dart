@@ -4,12 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:file_picker/file_picker.dart';
 
-class register_abogados extends StatefulWidget {
+class Register_abogados extends StatefulWidget {
+  static const String routename = "Register_abogados";
+
   @override
-  _register_abogadosState createState() => _register_abogadosState();
+  _Register_abogadosState createState() => _Register_abogadosState();
 }
 
-class _register_abogadosState extends State<register_abogados> {
+class _Register_abogadosState extends State<Register_abogados> {
   File? _diplomaFile;
 
   @override
@@ -18,7 +20,7 @@ class _register_abogadosState extends State<register_abogados> {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -34,7 +36,7 @@ class _register_abogadosState extends State<register_abogados> {
             right: 0,
             height: 180.0,
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0xFF392B54),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(40.0),
@@ -50,7 +52,7 @@ class _register_abogadosState extends State<register_abogados> {
           ),
 
           // Texto "TransitoNet" en el color especificado
-          Positioned(
+          const Positioned(
             top: 290.0,
             left: 0,
             right: 0,
@@ -66,7 +68,7 @@ class _register_abogadosState extends State<register_abogados> {
             ),
           ),
 
-          Positioned(
+          const Positioned(
             top: 200.0,
             left: 0,
             right: 0,
@@ -90,14 +92,14 @@ class _register_abogadosState extends State<register_abogados> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Diploma',
                   style: TextStyle(
                     color: Color(0xFF392B54),
                     fontSize: 16.0,
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 _buildDiplomaField(),
               ],
             ),
@@ -105,7 +107,7 @@ class _register_abogadosState extends State<register_abogados> {
 
           // Campo de texto para el nombre de usuario
 
-          Positioned(
+          const Positioned(
             bottom: 290.0,
             left: 30.0,
             right: 20.0,
@@ -124,7 +126,7 @@ class _register_abogadosState extends State<register_abogados> {
             left: 20.0,
             right: 20.0,
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(30.0),
@@ -133,11 +135,11 @@ class _register_abogadosState extends State<register_abogados> {
                     color: Colors.grey.withOpacity(0.5),
                     spreadRadius: 5,
                     blurRadius: 7,
-                    offset: Offset(0, 3),
+                    offset: const Offset(0, 3),
                   ),
                 ],
               ),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
                   border: InputBorder.none,
                 ),
@@ -157,7 +159,7 @@ class _register_abogadosState extends State<register_abogados> {
       children: [
         Expanded(
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(30.0),
@@ -166,13 +168,13 @@ class _register_abogadosState extends State<register_abogados> {
                   color: Colors.grey.withOpacity(0.5),
                   spreadRadius: 5,
                   blurRadius: 7,
-                  offset: Offset(0, 3),
+                  offset: const Offset(0, 3),
                 ),
               ],
             ),
             child: TextFormField(
               readOnly: true,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Seleccionar archivo',
                 border: InputBorder.none,
                 suffixIcon: Icon(Icons.attach_file),
@@ -181,10 +183,10 @@ class _register_abogadosState extends State<register_abogados> {
             ),
           ),
         ),
-        SizedBox(width: 10),
+        const SizedBox(width: 10),
         ElevatedButton(
           onPressed: _pickDiplomaFile,
-          child: Text('Cargar archivo'),
+          child: const Text('Cargar archivo'),
         ),
       ],
     );

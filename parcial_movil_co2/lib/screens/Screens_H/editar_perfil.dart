@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar.dart';
 
-class editar_perfil extends StatelessWidget {
+import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar2.dart';
+
+class Editar_perfil extends StatelessWidget {
+  static const String routename = "Editar_perfil";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(context: context),
+      appBar: CustomAppBar2(context: context),
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -20,7 +23,7 @@ class editar_perfil extends StatelessWidget {
 
           // Contenedor con la imagen "ya.png" en la parte superior
 
-          Positioned(
+          const Positioned(
             top: -55.0,
             left: 0,
             right: 0,
@@ -29,7 +32,7 @@ class editar_perfil extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
+                  Text(
                     'Editar perfil',
                     style: TextStyle(
                       color: Color(0xFF392B54), // Color del texto
@@ -42,7 +45,7 @@ class editar_perfil extends StatelessWidget {
             ),
           ),
 
-          Positioned(
+          const Positioned(
             bottom: 440.0,
             left: 30.0,
             right: 20.0,
@@ -61,7 +64,7 @@ class editar_perfil extends StatelessWidget {
             left: 20.0,
             right: 20.0,
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(30.0),
@@ -70,11 +73,11 @@ class editar_perfil extends StatelessWidget {
                     color: Colors.grey.withOpacity(0.5),
                     spreadRadius: 5,
                     blurRadius: 7,
-                    offset: Offset(0, 3),
+                    offset: const Offset(0, 3),
                   ),
                 ],
               ),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
                   hintText: 'Nombre de usuario',
                   border: InputBorder.none,
@@ -83,7 +86,7 @@ class editar_perfil extends StatelessWidget {
             ),
           ),
 
-          Positioned(
+          const Positioned(
             bottom: 340.0,
             left: 30.0,
             right: 20.0,
@@ -102,7 +105,7 @@ class editar_perfil extends StatelessWidget {
             left: 20.0,
             right: 20.0,
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(30.0),
@@ -111,11 +114,11 @@ class editar_perfil extends StatelessWidget {
                     color: Colors.grey.withOpacity(0.5),
                     spreadRadius: 5,
                     blurRadius: 7,
-                    offset: Offset(0, 3),
+                    offset: const Offset(0, 3),
                   ),
                 ],
               ),
-              child: TextField(
+              child: const TextField(
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Contraseña',
@@ -125,7 +128,7 @@ class editar_perfil extends StatelessWidget {
             ),
           ),
 
-          Positioned(
+          const Positioned(
             bottom: 235.0,
             left: 30.0,
             right: 20.0,
@@ -144,7 +147,7 @@ class editar_perfil extends StatelessWidget {
             left: 20.0,
             right: 20.0,
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(30.0),
@@ -153,11 +156,11 @@ class editar_perfil extends StatelessWidget {
                     color: Colors.grey.withOpacity(0.5),
                     spreadRadius: 5,
                     blurRadius: 7,
-                    offset: Offset(0, 3),
+                    offset: const Offset(0, 3),
                   ),
                 ],
               ),
-              child: TextField(
+              child: const TextField(
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Contraseña',
@@ -176,14 +179,14 @@ class editar_perfil extends StatelessWidget {
               height: 50.0,
               width: 10.0,
               decoration: BoxDecoration(
-                color: Color(0xFF392B54),
+                color: const Color(0xFF392B54),
                 borderRadius: BorderRadius.circular(30.0),
               ),
               child: TextButton(
                 onPressed: () {
                   // Aquí iría la lógica para iniciar sesión
                 },
-                child: Text(
+                child: const Text(
                   'Guardar cambios',
                   style: TextStyle(
                     color: Colors.white,
@@ -194,7 +197,7 @@ class editar_perfil extends StatelessWidget {
             ),
           ),
 
-          Positioned(
+          const Positioned(
             bottom: 140.0,
             left: 30.0,
             right: 20.0,
@@ -213,7 +216,7 @@ class editar_perfil extends StatelessWidget {
             left: 20.0,
             right: 20.0,
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(30.0),
@@ -222,11 +225,11 @@ class editar_perfil extends StatelessWidget {
                     color: Colors.grey.withOpacity(0.5),
                     spreadRadius: 5,
                     blurRadius: 7,
-                    offset: Offset(0, 3),
+                    offset: const Offset(0, 3),
                   ),
                 ],
               ),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
                   hintText: 'Email',
                   border: InputBorder.none,

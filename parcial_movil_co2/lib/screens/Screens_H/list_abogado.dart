@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar.dart';
+
+import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar2.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/botones/botones.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/buscador/message_field_box.dart';
+import 'package:parcial_movil_co2/screens/register_abogados.dart';
 
 class ListAbogado extends StatelessWidget {
-  const ListAbogado({super.key});
-
+  static const String routename = "ListAbogado";
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
@@ -13,26 +14,30 @@ class ListAbogado extends StatelessWidget {
     var screenSizeFont = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        appBar: CustomAppBar(context: context),
+        appBar: CustomAppBar2(context: context),
         body: SizedBox(
           width: screenWidth,
           child: Column(
             children: [
-              Container(
+              SizedBox(
                 height: screenHeight * 0.25,
                 width: screenWidth * 0.95,
-                child: const Column(
+                child: Column(
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Button(
+                          onPressed: () {
+                            Navigator.pushReplacementNamed(
+                                context, Register_abogados.routename);
+                          },
                           titulo: 'Postulate',
-                          color: Color.fromARGB(255, 139, 75, 223),
+                          color: const Color.fromARGB(255, 139, 75, 223),
                         ),
                       ],
                     ),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
@@ -45,10 +50,10 @@ class ListAbogado extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 35,
                     ),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [MessageFieldBox()],
@@ -166,12 +171,14 @@ class ListAbogado extends StatelessWidget {
                                 overflow: TextOverflow.visible,
                               ),
                             ),
-                            const Row(
+                            Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Button(
+                                  onPressed: () {},
                                   titulo: 'Contastar',
-                                  color: Color.fromARGB(255, 139, 75, 223),
+                                  color:
+                                      const Color.fromARGB(255, 139, 75, 223),
                                 ),
                               ],
                             ),

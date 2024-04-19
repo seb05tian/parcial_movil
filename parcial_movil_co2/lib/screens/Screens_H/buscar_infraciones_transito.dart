@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar.dart';
+
+import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar2.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/botones/botones.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/buscador/message_field_box.dart';
+import 'package:parcial_movil_co2/screens/derechos_deberes.dart';
 
 class BuscarInfracciones extends StatelessWidget {
-  const BuscarInfracciones({super.key});
+  static const String routename = "BuscarInfracciones";
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,7 @@ class BuscarInfracciones extends StatelessWidget {
     var screenSizeFont = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        appBar: CustomAppBar(context: context),
+        appBar: CustomAppBar2(context: context),
         body: SizedBox(
           width: screenWidth,
           child: Column(
@@ -24,18 +26,22 @@ class BuscarInfracciones extends StatelessWidget {
                 decoration: BoxDecoration(
                   border: Border.all(width: 2, color: Colors.red),
                 ),
-                child: const Column(
+                child: Column(
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Button(
-                          titulo: 'Juridiccion',
-                          color: Color.fromARGB(255, 139, 75, 223),
+                          onPressed: () {
+                            Navigator.pushReplacementNamed(
+                                context, Derechos_deberes.routename);
+                          },
+                          titulo: 'Derechos y Deberes',
+                          color: const Color.fromARGB(255, 139, 75, 223),
                         ),
                       ],
                     ),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
@@ -48,10 +54,10 @@ class BuscarInfracciones extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 35,
                     ),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [MessageFieldBox()],

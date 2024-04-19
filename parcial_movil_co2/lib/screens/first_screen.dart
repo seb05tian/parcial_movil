@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:parcial_movil_co2/screens/login.dart';
+import 'package:parcial_movil_co2/screens/register.dart';
 
 class first_screen extends StatelessWidget {
-  
-
-  
+  static const String routename = "first_screen";
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class first_screen extends StatelessWidget {
         children: [
           // Contenedor de fondo personalizado
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -28,7 +28,7 @@ class first_screen extends StatelessWidget {
             right: 0,
             height: 260.0,
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0xFF392B54),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(40.0),
@@ -58,7 +58,7 @@ class first_screen extends StatelessWidget {
                     color: Colors.grey.withOpacity(0.5), // Color del sombreado
                     spreadRadius: 5, // Radio de expansión del sombreado
                     blurRadius: 7, // Radio de desenfoque del sombreado
-                    offset: Offset(0, 3), // Desplazamiento del sombreado
+                    offset: const Offset(0, 3), // Desplazamiento del sombreado
                   ),
                 ],
               ),
@@ -71,7 +71,7 @@ class first_screen extends StatelessWidget {
           ),
 
           // Contenedor con el texto "TransitoNet" debajo de las imágenes
-          Positioned(
+          const Positioned(
             top: 350.0,
             left: 0,
             right: 0,
@@ -96,34 +96,40 @@ class first_screen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, login.routename);
+                  },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFF9292B54), // Color del botón "Iniciar Sesión"
+                    backgroundColor: const Color(
+                        0xFF9292B54), // Color del botón "Iniciar Sesión"
                     textStyle:
-                        TextStyle(color: Colors.white), // Color del texto
-                    padding: EdgeInsets.symmetric(
+                        const TextStyle(color: Colors.white), // Color del texto
+                    padding: const EdgeInsets.symmetric(
                         vertical: 15,
                         horizontal: 25), // Espaciado interno del botón
                   ),
-                  child: Text(
+                  child: const Text(
                     'Iniciar Sesión',
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30.0,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, register.routename);
+                  },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFF7F6ADB), // Color del botón "Registrarse"
+                    backgroundColor: const Color(
+                        0xFF7F6ADB), // Color del botón "Registrarse"
                     textStyle:
-                        TextStyle(color: Colors.white), // Color del texto
-                    padding: EdgeInsets.symmetric(
+                        const TextStyle(color: Colors.white), // Color del texto
+                    padding: const EdgeInsets.symmetric(
                         vertical: 15,
                         horizontal: 30), // Espaciado interno del botón
                   ),
-                  child: Text(
+                  child: const Text(
                     'Registrarse',
                     style: TextStyle(color: Colors.white),
                   ),

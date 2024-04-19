@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar.dart';
+import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar2.dart';
 
 class notificaciones extends StatelessWidget {
+  static const String routename = "notificaciones";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(context: context),
+      appBar: CustomAppBar2(context: context),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -18,7 +19,7 @@ class notificaciones extends StatelessWidget {
         child: ListView(
           children: [
             Container(
-              margin: EdgeInsets.only(top: 50.0, left: 15.0, right: 15.0),
+              margin: const EdgeInsets.only(top: 50.0, left: 15.0, right: 15.0),
               height: 240.0,
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -28,11 +29,11 @@ class notificaciones extends StatelessWidget {
                     color: Colors.grey.withOpacity(0.5),
                     spreadRadius: 10,
                     blurRadius: 10,
-                    offset: Offset(3, 3),
+                    offset: const Offset(3, 3),
                   ),
                 ],
               ),
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
@@ -59,7 +60,7 @@ class notificaciones extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 50.0, left: 15.0, right: 15.0),
+              margin: const EdgeInsets.only(top: 50.0, left: 15.0, right: 15.0),
               height: 240.0,
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -69,11 +70,11 @@ class notificaciones extends StatelessWidget {
                     color: Colors.grey.withOpacity(0.5),
                     spreadRadius: 10,
                     blurRadius: 10,
-                    offset: Offset(3, 3),
+                    offset: const Offset(3, 3),
                   ),
                 ],
               ),
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(

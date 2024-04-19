@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar.dart';
+
+import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar2.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/botones/botones.dart';
 
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/cajasTexto/cajaDescripcion.dart';
+import 'package:parcial_movil_co2/screens/Screens_H/list_abogado.dart';
+import 'package:parcial_movil_co2/screens/jurisdiccion.dart';
 
 class LeyesTransito extends StatelessWidget {
-  const LeyesTransito({Key? key});
+  static const String routename = "LeyesTransito";
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +16,7 @@ class LeyesTransito extends StatelessWidget {
     var screenWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        appBar: CustomAppBar(context: context),
+        appBar: CustomAppBar2(context: context),
         body: SingleChildScrollView(
           child: Container(
             margin: const EdgeInsets.all(10),
@@ -63,19 +66,27 @@ class LeyesTransito extends StatelessWidget {
                       height: screenHeight * 0.08,
                       decoration: BoxDecoration(
                           border: Border.all(width: 2, color: Colors.green)),
-                      child: const Row(
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Button(
+                            onPressed: () {
+                              Navigator.pushReplacementNamed(
+                                  context, Jurisdiccion.routename);
+                            },
                             titulo: 'Juridiccion',
-                            color: Color(0xFF392B54),
+                            color: const Color(0xFF392B54),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 0,
                           ),
                           Button(
+                              onPressed: () {
+                                Navigator.pushReplacementNamed(
+                                    context, ListAbogado.routename);
+                              },
                               titulo: 'Asesoria Legal',
-                              color: Color.fromARGB(255, 139, 75, 223))
+                              color: const Color.fromARGB(255, 139, 75, 223))
                         ],
                       ),
                     ),

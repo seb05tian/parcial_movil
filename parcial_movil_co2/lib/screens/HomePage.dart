@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:parcial_movil_co2/screens/Screens_H/buscar_infraciones_transito.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar.dart';
+import 'package:parcial_movil_co2/screens/Screens_H/leyes_transito.dart';
+import 'package:parcial_movil_co2/screens/Screens_H/list_abogado.dart';
+import 'package:parcial_movil_co2/screens/Screens_H/se%C3%B1ales_transito.dart';
+import 'package:parcial_movil_co2/screens/notificaciones.dart';
 
 class Homepage extends StatelessWidget {
+  static const String routename = "Homepage";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -9,7 +16,7 @@ class Homepage extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -26,7 +33,7 @@ class Homepage extends StatelessWidget {
               width: 100.0,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(20.0),
                   topRight: Radius.circular(20.0),
                   bottomLeft: Radius.circular(20.0),
@@ -37,7 +44,7 @@ class Homepage extends StatelessWidget {
                     color: Colors.grey.withOpacity(0.5),
                     spreadRadius: 10,
                     blurRadius: 10,
-                    offset: Offset(3, 3),
+                    offset: const Offset(3, 3),
                   ),
                 ],
               ),
@@ -49,17 +56,18 @@ class Homepage extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          print('Notificaciones Tapped');
+                          Navigator.pushReplacementNamed(
+                              context, notificaciones.routename);
                         },
                         child: Column(
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                color: Color(0xFFCCCCCE),
+                                color: const Color(0xFFCCCCCE),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                              child: const Padding(
+                                padding: EdgeInsets.all(8.0),
                                 child: Icon(
                                   Icons.notifications,
                                   size: 40.0,
@@ -67,8 +75,8 @@ class Homepage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 5),
-                            Text(
+                            const SizedBox(height: 5),
+                            const Text(
                               'Notificaciones',
                               style: TextStyle(color: Colors.black),
                             ),
@@ -77,17 +85,18 @@ class Homepage extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          print('Señales de tránsito Tapped');
+                          Navigator.pushReplacementNamed(
+                              context, SenalesTransito.routename);
                         },
                         child: Column(
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                color: Color(0xFFCCCCCE),
+                                color: const Color(0xFFCCCCCE),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                              child: const Padding(
+                                padding: EdgeInsets.all(8.0),
                                 child: Icon(
                                   Icons.traffic,
                                   size: 40.0,
@@ -95,8 +104,8 @@ class Homepage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 5),
-                            Column(
+                            const SizedBox(height: 5),
+                            const Column(
                               children: [
                                 Text(
                                   'Señales de',
@@ -113,17 +122,18 @@ class Homepage extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          print('Abogados Tapped');
+                          Navigator.pushReplacementNamed(
+                              context, ListAbogado.routename);
                         },
                         child: Column(
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                color: Color(0xFFCCCCCE),
+                                color: const Color(0xFFCCCCCE),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                              child: const Padding(
+                                padding: EdgeInsets.all(8.0),
                                 child: Icon(
                                   Icons.account_balance,
                                   size: 40.0,
@@ -131,8 +141,8 @@ class Homepage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 5),
-                            Text(
+                            const SizedBox(height: 5),
+                            const Text(
                               'Abogados',
                               style: TextStyle(color: Colors.black),
                             ),
@@ -146,17 +156,18 @@ class Homepage extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          print('Leyes de tránsito Tapped');
+                          Navigator.pushReplacementNamed(
+                              context, LeyesTransito.routename);
                         },
                         child: Column(
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                color: Color(0xFFCCCCCE),
+                                color: const Color(0xFFCCCCCE),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                              child: const Padding(
+                                padding: EdgeInsets.all(8.0),
                                 child: Icon(
                                   Icons.gavel,
                                   size: 40.0,
@@ -164,8 +175,8 @@ class Homepage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 5),
-                            Column(
+                            const SizedBox(height: 5),
+                            const Column(
                               children: [
                                 Text(
                                   'Leyes de',
@@ -182,17 +193,18 @@ class Homepage extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          print('Infracciones de tránsito Tapped');
+                          Navigator.pushReplacementNamed(
+                              context, BuscarInfracciones.routename);
                         },
                         child: Column(
                           children: [
                             Container(
                               decoration: BoxDecoration(
-                                color: Color(0xFFCCCCCE),
+                                color: const Color(0xFFCCCCCE),
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                              child: const Padding(
+                                padding: EdgeInsets.all(8.0),
                                 child: Icon(
                                   Icons.local_police,
                                   size: 40.0,
@@ -200,8 +212,8 @@ class Homepage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 5),
-                            Column(
+                            const SizedBox(height: 5),
+                            const Column(
                               children: [
                                 Text(
                                   'Infracciones',

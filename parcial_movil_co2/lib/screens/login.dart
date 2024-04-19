@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:parcial_movil_co2/screens/HomePage.dart';
 
 class login extends StatelessWidget {
+  static const String routename = "login";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -8,7 +10,7 @@ class login extends StatelessWidget {
         children: [
           // Contenedor de fondo personalizado
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -24,7 +26,7 @@ class login extends StatelessWidget {
             right: 0,
             height: 260.0,
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0xFF392B54),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(40.0),
@@ -40,7 +42,7 @@ class login extends StatelessWidget {
           ),
 
           // Texto "TransitoNet" en el color especificado
-          Positioned(
+          const Positioned(
             top: 270.0,
             left: 0,
             right: 0,
@@ -57,7 +59,7 @@ class login extends StatelessWidget {
           ),
 
           // Texto "Nombre de usuario" arriba del campo de texto
-          Positioned(
+          const Positioned(
             bottom: 260.0,
             left: 30.0,
             right: 20.0,
@@ -76,7 +78,7 @@ class login extends StatelessWidget {
             left: 20.0,
             right: 20.0,
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(30.0),
@@ -85,11 +87,11 @@ class login extends StatelessWidget {
                     color: Colors.grey.withOpacity(0.5),
                     spreadRadius: 5,
                     blurRadius: 7,
-                    offset: Offset(0, 3),
+                    offset: const Offset(0, 3),
                   ),
                 ],
               ),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
                   hintText: 'Nombre de usuario',
                   border: InputBorder.none,
@@ -99,7 +101,7 @@ class login extends StatelessWidget {
           ),
 
           // Texto "Contraseña" arriba del campo de texto
-          Positioned(
+          const Positioned(
             bottom: 160.0,
             left: 30.0,
             right: 20.0,
@@ -118,7 +120,7 @@ class login extends StatelessWidget {
             left: 20.0,
             right: 20.0,
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(30.0),
@@ -127,11 +129,11 @@ class login extends StatelessWidget {
                     color: Colors.grey.withOpacity(0.5),
                     spreadRadius: 5,
                     blurRadius: 7,
-                    offset: Offset(0, 3),
+                    offset: const Offset(0, 3),
                   ),
                 ],
               ),
-              child: TextField(
+              child: const TextField(
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Contraseña',
@@ -150,14 +152,14 @@ class login extends StatelessWidget {
               height: 50.0,
               width: 10.0,
               decoration: BoxDecoration(
-                color: Color(0xFF392B54),
+                color: const Color(0xFF392B54),
                 borderRadius: BorderRadius.circular(30.0),
               ),
               child: TextButton(
                 onPressed: () {
-                  // Aquí iría la lógica para iniciar sesión
+                  Navigator.pushReplacementNamed(context, Homepage.routename);
                 },
-                child: Text(
+                child: const Text(
                   'Iniciar sesión',
                   style: TextStyle(
                     color: Colors.white,

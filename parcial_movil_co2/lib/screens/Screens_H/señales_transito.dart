@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar.dart';
 
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/buscador/message_field_box.dart';
 
+import 'configuracion/appbar/custon_appBar2.dart';
+
 class SenalesTransito extends StatelessWidget {
-  const SenalesTransito({super.key});
+  static const String routename = "SenalesTransito";
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
@@ -12,12 +13,12 @@ class SenalesTransito extends StatelessWidget {
     var screenSizeFont = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        appBar: CustomAppBar(context: context),
+        appBar: CustomAppBar2(context: context),
         body: SizedBox(
           width: screenWidth,
           child: Column(
             children: [
-              Container(
+              SizedBox(
                 height: screenHeight * 0.20,
                 width: screenWidth * 0.95,
                 child: const Column(
@@ -80,13 +81,13 @@ class SenalesTransito extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Container(
-                                    padding: EdgeInsets.all(5),
+                                    padding: const EdgeInsets.all(5),
                                     child: Text(
                                       'Ambito de Aplicacion',
                                       style: TextStyle(
                                         fontWeight: FontWeight.w700,
                                         fontSize: screenSizeFont * 0.022,
-                                        color: Color(0xFF392B54),
+                                        color: const Color(0xFF392B54),
                                       ),
                                     ),
                                   )
@@ -104,7 +105,7 @@ class SenalesTransito extends StatelessWidget {
                                       0.19, // Esto también ocupará la mitad del ancho del Row
                                   // Aquí puedes colocar tu imagen en lugar de un contenedor vacío
                                   child:
-                                      Placeholder(), // Placeholder es solo para demostración, reemplázalo con tu imagen
+                                      const Placeholder(), // Placeholder es solo para demostración, reemplázalo con tu imagen
                                 ),
                                 Container(
                                   padding: const EdgeInsets.all(20),
