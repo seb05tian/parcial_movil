@@ -222,6 +222,48 @@ class Homepage extends StatelessWidget {
               ),
             ),
           ),
+<<<<<<< HEAD
+=======
+          Positioned(
+            bottom: 600.0,
+            left: 20.0,
+            right: 20.0,
+            child: GestureDetector(
+              onTap: () {
+                // Navegar a otra página cuando se toque el texto
+                print('Navigate to another page');
+              },
+              child: Row(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(color: Colors.white, width: 2.0),
+                    ),
+                    child: CircleAvatar(
+                      radius: 30.0,
+                      backgroundImage: AssetImage('assets/img/abogado.png'),
+                    ),
+                  ),
+                  SizedBox(width: 5.0),
+                  Column(
+                    children: [
+                      Text(
+                        'Hola, Sebastian',
+                        style: TextStyle(color: Colors.white, fontSize: 20.0),
+                      ),
+                      SizedBox(height: 5.0),
+                      Text(
+                        '¿Qué quieres hacer hoy?',
+                        style: TextStyle(color: Colors.white, fontSize: 14.0),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+>>>>>>> 0008f55afb09f6878b503fc4f0f2b5c7c73a5b0c
         ],
       ),
     );
