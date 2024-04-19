@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar.dart';
 
 class notificaciones extends StatelessWidget {
+  static const String routename = "notificaciones";
   @override
   Widget build(BuildContext context) {
     return Scaffold(

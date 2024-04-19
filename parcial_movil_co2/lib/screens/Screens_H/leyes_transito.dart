@@ -5,7 +5,8 @@ import 'package:parcial_movil_co2/screens/Screens_H/configuracion/botones/botone
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/cajasTexto/cajaDescripcion.dart';
 
 class LeyesTransito extends StatelessWidget {
-  const LeyesTransito({Key? key});
+  
+  static const String routename = "LeyesTransito";
 
   @override
   Widget build(BuildContext context) {

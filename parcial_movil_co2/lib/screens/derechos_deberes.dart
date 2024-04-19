@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar.dart';
 
 class derechos_deberes extends StatelessWidget {
+  static const String routename = "derechos_deberes";
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

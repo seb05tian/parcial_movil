@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:parcial_movil_co2/screens/Screens_H/buscar_infraciones_transito.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar.dart';
+import 'package:parcial_movil_co2/screens/Screens_H/leyes_transito.dart';
+import 'package:parcial_movil_co2/screens/Screens_H/list_abogado.dart';
+import 'package:parcial_movil_co2/screens/Screens_H/se%C3%B1ales_transito.dart';
+import 'package:parcial_movil_co2/screens/notificaciones.dart';
 
 class Homepage extends StatelessWidget {
+  static const String routename = "Homepage";
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +57,7 @@ class Homepage extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          print('Notificaciones Tapped');
+                          Navigator.pushReplacementNamed(context, notificaciones.routename);
                         },
                         child: Column(
                           children: [
@@ -77,7 +85,7 @@ class Homepage extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          print('Señales de tránsito Tapped');
+                         Navigator.pushReplacementNamed(context, SenalesTransito.routename);
                         },
                         child: Column(
                           children: [
@@ -113,7 +121,7 @@ class Homepage extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          print('Abogados Tapped');
+                          Navigator.pushReplacementNamed(context, ListAbogado.routename);
                         },
                         child: Column(
                           children: [
@@ -146,7 +154,7 @@ class Homepage extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          print('Leyes de tránsito Tapped');
+                          Navigator.pushReplacementNamed(context, LeyesTransito.routename);
                         },
                         child: Column(
                           children: [
@@ -182,7 +190,7 @@ class Homepage extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          print('Infracciones de tránsito Tapped');
+                          Navigator.pushReplacementNamed(context, BuscarInfracciones.routename);
                         },
                         child: Column(
                           children: [
@@ -222,48 +230,7 @@ class Homepage extends StatelessWidget {
               ),
             ),
           ),
-<<<<<<< HEAD
-=======
-          Positioned(
-            bottom: 600.0,
-            left: 20.0,
-            right: 20.0,
-            child: GestureDetector(
-              onTap: () {
-                // Navegar a otra página cuando se toque el texto
-                print('Navigate to another page');
-              },
-              child: Row(
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(color: Colors.white, width: 2.0),
-                    ),
-                    child: CircleAvatar(
-                      radius: 30.0,
-                      backgroundImage: AssetImage('assets/img/abogado.png'),
-                    ),
-                  ),
-                  SizedBox(width: 5.0),
-                  Column(
-                    children: [
-                      Text(
-                        'Hola, Sebastian',
-                        style: TextStyle(color: Colors.white, fontSize: 20.0),
-                      ),
-                      SizedBox(height: 5.0),
-                      Text(
-                        '¿Qué quieres hacer hoy?',
-                        style: TextStyle(color: Colors.white, fontSize: 14.0),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
->>>>>>> 0008f55afb09f6878b503fc4f0f2b5c7c73a5b0c
+
         ],
       ),
     );

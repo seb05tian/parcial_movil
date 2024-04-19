@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-
+import 'package:parcial_movil_co2/screens/login.dart';
+import 'package:parcial_movil_co2/screens/register.dart';
 class first_screen extends StatelessWidget {
   
+
+  static const String routename = "first_screen";
 
   
 
@@ -96,7 +99,9 @@ class first_screen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                     Navigator.pushReplacementNamed(context, login.routename);
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF9292B54), // Color del botón "Iniciar Sesión"
                     textStyle:
@@ -114,7 +119,9 @@ class first_screen extends StatelessWidget {
                   height: 30.0,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, register.routename);
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF7F6ADB), // Color del botón "Registrarse"
                     textStyle:

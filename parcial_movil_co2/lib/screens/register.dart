@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class register extends StatelessWidget {
+  static const String routename = "register";
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

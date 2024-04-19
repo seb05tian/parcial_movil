@@ -4,7 +4,8 @@ import 'package:parcial_movil_co2/screens/Screens_H/configuracion/botones/botone
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/buscador/message_field_box.dart';
 
 class BuscarInfracciones extends StatelessWidget {
-  const BuscarInfracciones({super.key});
+  
+  static const String routename = "BuscarInfracciones";
 
   @override
   Widget build(BuildContext context) {

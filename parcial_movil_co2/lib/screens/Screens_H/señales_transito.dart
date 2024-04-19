@@ -4,7 +4,8 @@ import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/buscador/message_field_box.dart';
 
 class SenalesTransito extends StatelessWidget {
-  const SenalesTransito({super.key});
+  
+  static const String routename = "SenalesTransito";
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;

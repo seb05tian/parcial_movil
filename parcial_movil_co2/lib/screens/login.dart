@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:parcial_movil_co2/screens/HomePage.dart';
 
 class login extends StatelessWidget {
+  static const String routename = "login";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -155,7 +157,7 @@ class login extends StatelessWidget {
               ),
               child: TextButton(
                 onPressed: () {
-                  // Aquí iría la lógica para iniciar sesión
+                  Navigator.pushReplacementNamed(context, Homepage.routename);
                 },
                 child: Text(
                   'Iniciar sesión',

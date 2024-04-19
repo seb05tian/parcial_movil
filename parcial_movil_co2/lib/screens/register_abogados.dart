@@ -5,6 +5,9 @@ import 'package:flutter/services.dart';
 import 'package:file_picker/file_picker.dart';
 
 class register_abogados extends StatefulWidget {
+  static const String routename = "register_abogados";
+
+ 
   @override
   _register_abogadosState createState() => _register_abogadosState();
 }
