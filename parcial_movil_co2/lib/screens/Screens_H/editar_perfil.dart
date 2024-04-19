@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:parcial_movil_co2/screens/Screens_H/appbar/custon_appBar.dart';
 
 class editar_perfil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
+      appBar: const CustomAppBar(),
       body: Stack(
         children: [
           
@@ -18,30 +21,11 @@ class editar_perfil extends StatelessWidget {
           ),
 
           // Contenedor con la imagen "ya.png" en la parte superior
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            height: 180.0,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Color(0xFF392B54),
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(40.0),
-                  bottomRight: Radius.circular(40.0),
-                ),
-              ),
-              child: Image.asset(
-                'assets/img/ya.png',
-                height: 280.0,
-                width: 400.0,
-              ),
-            ),
-          ),
+          
 
          
           Positioned(
-            top: 155.0,
+            top: -55.0,
             left: 0,
             right: 0,
             height: 180.0,
@@ -51,7 +35,7 @@ class editar_perfil extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      'Mi perfil',
+                      'Editar perfil',
                       style: TextStyle(
                         color: Color(0xFF392B54), // Color del texto
                         fontWeight: FontWeight.bold,
@@ -59,17 +43,7 @@ class editar_perfil extends StatelessWidget {
                       ),
                     ),
                     
-                    const SizedBox(height: 5),
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Color(0xFF392B54)), // Bordeado de color
-                        shape: BoxShape.circle,
-                      ),
-                      child: CircleAvatar(
-                        radius: 45.0,
-                        backgroundImage: AssetImage('assets/img/abogado.png'),
-                      ),
-                    ),
+                    
                   ],
                 ),
               ),
