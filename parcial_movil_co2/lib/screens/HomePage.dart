@@ -107,7 +107,7 @@ class Homepage extends StatelessWidget {
                             Column(
                               children: [
                                 Text(
-                                  'Señales',
+                                  'Señales de tránsito',
                                   style: TextStyle(color: Colors.black),
                                 ),
                                
