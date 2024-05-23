@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:parcial_movil_co2/screens/HomePage.dart';
 
-import 'package:flutter/material.dart';
-import 'package:parcial_movil_co2/screens/HomePage.dart';
-
 class login extends StatelessWidget {
   static const String routename = "login";
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       body: ListView(
         children: [
           // Contenedor de fondo personalizado
           Container(
+            height: size.height * 0.001,
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
@@ -23,9 +23,9 @@ class login extends StatelessWidget {
             ),
           ),
 
-          // Contenedor con la imagen "ya.png" en la parte superior
+          
           Container(
-            height: 260.0,
+            height: size.height * 0.3,
             decoration: const BoxDecoration(
               color: Color(0xFF392B54),
               borderRadius: BorderRadius.only(
@@ -33,10 +33,12 @@ class login extends StatelessWidget {
                 bottomRight: Radius.circular(40.0),
               ),
             ),
-            child: Image.asset(
-              'assets/img/ya.png',
-              height: 280.0,
-              width: 400.0,
+            child: Center(
+              child: Image.asset(
+                'assets/img/ya.png',
+                height: size.height * 0.35,
+                width: size.width * 0.7,
+              ),
             ),
           ),
 
@@ -47,31 +49,31 @@ class login extends StatelessWidget {
               style: TextStyle(
                 color: Color(0xFF392B54),
                 fontWeight: FontWeight.bold,
-                fontSize: 40.0,
+                fontSize: size.height * 0.05,
               ),
             ),
           ),
 
-          // Texto "Nombre de usuario" arriba del campo de texto
+          
           Padding(
-            padding: const EdgeInsets.fromLTRB(30.0, 10.0, 20.0, 0.0),
+            padding: EdgeInsets.fromLTRB(size.width * 0.075, size.height * 0.02, size.width * 0.05, 0.0),
             child: Text(
               'Nombre de usuario',
               style: TextStyle(
                 color: Color(0xFF392B54),
-                fontSize: 16.0,
+                fontSize: size.height * 0.02,
               ),
             ),
           ),
 
-          // Campo de texto para el nombre de usuario
+          
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(30.0),
+                borderRadius: BorderRadius.circular(size.height * 0.03),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.5),
@@ -92,24 +94,24 @@ class login extends StatelessWidget {
 
           // Texto "Contraseña" arriba del campo de texto
           Padding(
-            padding: const EdgeInsets.fromLTRB(30.0, 10.0, 20.0, 0.0),
+            padding: EdgeInsets.fromLTRB(size.width * 0.075, size.height * 0.02, size.width * 0.05, 0.0),
             child: Text(
               'Contraseña',
               style: TextStyle(
                 color: Color(0xFF392B54),
-                fontSize: 16.0,
+                fontSize: size.height * 0.02,
               ),
             ),
           ),
 
           // Campo de texto para la contraseña
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(30.0),
+                borderRadius: BorderRadius.circular(size.height * 0.03),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.5),
@@ -131,23 +133,23 @@ class login extends StatelessWidget {
 
           // Botón "Iniciar sesión"
           Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: EdgeInsets.all(size.width * 0.05),
             child: Container(
-              height: 50.0,
+              height: size.height * 0.07,
               width: double.infinity,
               decoration: BoxDecoration(
                 color: const Color(0xFF392B54),
-                borderRadius: BorderRadius.circular(30.0),
+                borderRadius: BorderRadius.circular(size.height * 0.03),
               ),
               child: TextButton(
                 onPressed: () {
                   Navigator.pushReplacementNamed(context, Homepage.routename);
                 },
-                child: const Text(
+                child: Text(
                   'Iniciar sesión',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 18.0,
+                    fontSize: size.height * 0.025,
                   ),
                 ),
               ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar2.dart';
 
 class Editar_perfil extends StatelessWidget {
@@ -7,9 +6,11 @@ class Editar_perfil extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: CustomAppBar2(context: context),
-      body: Stack(
+      body: ListView(
         children: [
           Container(
             decoration: const BoxDecoration(
@@ -22,33 +23,22 @@ class Editar_perfil extends StatelessWidget {
           ),
 
           // Contenedor con la imagen "ya.png" en la parte superior
-
-          const Positioned(
-            top: -55.0,
-            left: 0,
-            right: 0,
-            height: 180.0,
+          Container(
+            padding: EdgeInsets.symmetric(vertical: size.height * 0.04),
             child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Editar perfil',
-                    style: TextStyle(
-                      color: Color(0xFF392B54), // Color del texto
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20.0,
-                    ),
-                  ),
-                ],
+              child: Text(
+                'Editar perfil',
+                style: TextStyle(
+                  color: Color(0xFF392B54),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20.0,
+                ),
               ),
             ),
           ),
 
-          const Positioned(
-            bottom: 440.0,
-            left: 30.0,
-            right: 20.0,
+          Padding(
+            padding: EdgeInsets.fromLTRB(30.0, 0.0, 20.0, 0.0),
             child: Text(
               'Nombre de usuario',
               style: TextStyle(
@@ -59,25 +49,23 @@ class Editar_perfil extends StatelessWidget {
           ),
 
           // Campo de texto para el nombre de usuario
-          Positioned(
-            bottom: 380.0,
-            left: 20.0,
-            right: 20.0,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(30.0),
+                borderRadius: BorderRadius.circular(size.height * 0.05),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.5),
                     spreadRadius: 5,
                     blurRadius: 7,
-                    offset: const Offset(0, 3),
+                    offset: Offset(0, 3),
                   ),
                 ],
               ),
-              child: const TextField(
+              child: TextField(
                 decoration: InputDecoration(
                   hintText: 'Nombre de usuario',
                   border: InputBorder.none,
@@ -86,10 +74,8 @@ class Editar_perfil extends StatelessWidget {
             ),
           ),
 
-          const Positioned(
-            bottom: 340.0,
-            left: 30.0,
-            right: 20.0,
+          Padding(
+            padding: EdgeInsets.fromLTRB(30.0, 10.0, 20.0, 0.0),
             child: Text(
               'Contraseña',
               style: TextStyle(
@@ -100,25 +86,23 @@ class Editar_perfil extends StatelessWidget {
           ),
 
           // Campo de texto para la contraseña
-          Positioned(
-            bottom: 280.0,
-            left: 20.0,
-            right: 20.0,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(30.0),
+                borderRadius: BorderRadius.circular(size.height * 0.05),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.5),
                     spreadRadius: 5,
                     blurRadius: 7,
-                    offset: const Offset(0, 3),
+                    offset: Offset(0, 3),
                   ),
                 ],
               ),
-              child: const TextField(
+              child: TextField(
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Contraseña',
@@ -128,10 +112,8 @@ class Editar_perfil extends StatelessWidget {
             ),
           ),
 
-          const Positioned(
-            bottom: 235.0,
-            left: 30.0,
-            right: 20.0,
+          Padding(
+            padding: EdgeInsets.fromLTRB(30.0, 10.0, 20.0, 0.0),
             child: Text(
               'Confirmar Contraseña',
               style: TextStyle(
@@ -142,25 +124,23 @@ class Editar_perfil extends StatelessWidget {
           ),
 
           // Campo de texto para la contraseña
-          Positioned(
-            bottom: 175.0,
-            left: 20.0,
-            right: 20.0,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(30.0),
+                borderRadius: BorderRadius.circular(size.height * 0.05),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.5),
                     spreadRadius: 5,
                     blurRadius: 7,
-                    offset: const Offset(0, 3),
+                    offset: Offset(0, 3),
                   ),
                 ],
               ),
-              child: const TextField(
+              child: TextField(
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Contraseña',
@@ -170,37 +150,11 @@ class Editar_perfil extends StatelessWidget {
             ),
           ),
 
-          // Botón "Iniciar sesión"
-          Positioned(
-            bottom: 10.0,
-            left: 20.0,
-            right: 20.0,
-            child: Container(
-              height: 50.0,
-              width: 10.0,
-              decoration: BoxDecoration(
-                color: const Color(0xFF392B54),
-                borderRadius: BorderRadius.circular(30.0),
-              ),
-              child: TextButton(
-                onPressed: () {
-                  // Aquí iría la lógica para iniciar sesión
-                },
-                child: const Text(
-                  'Guardar cambios',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18.0,
-                  ),
-                ),
-              ),
-            ),
-          ),
+          
+          
 
-          const Positioned(
-            bottom: 140.0,
-            left: 30.0,
-            right: 20.0,
+          Padding(
+            padding: EdgeInsets.fromLTRB(30.0, 10.0, 20.0, 0.0),
             child: Text(
               'Email ',
               style: TextStyle(
@@ -210,29 +164,51 @@ class Editar_perfil extends StatelessWidget {
             ),
           ),
 
-          // Campo de texto para el nombre de usuario
-          Positioned(
-            bottom: 80.0,
-            left: 20.0,
-            right: 20.0,
+          
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(30.0),
+                borderRadius: BorderRadius.circular(size.height * 0.05),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.5),
                     spreadRadius: 5,
                     blurRadius: 7,
-                    offset: const Offset(0, 3),
+                    offset: Offset(0, 3),
                   ),
                 ],
               ),
-              child: const TextField(
+              child: TextField(
                 decoration: InputDecoration(
                   hintText: 'Email',
                   border: InputBorder.none,
+                ),
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: EdgeInsets.all(20.0),
+            child: Container(
+              height: 50.0,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Color(0xFF392B54),
+                borderRadius: BorderRadius.circular(size.height * 0.025),
+              ),
+              child: TextButton(
+                onPressed: () {
+                  // Aquí iría la lógica para guardar los cambios
+                },
+                child: Text(
+                  'Guardar cambios',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18.0,
+                  ),
                 ),
               ),
             ),

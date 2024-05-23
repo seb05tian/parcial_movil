@@ -3,14 +3,17 @@ import 'package:parcial_movil_co2/screens/Screens_H/buscar_infraciones_transito.
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/leyes_transito.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/list_abogado.dart';
-import 'package:parcial_movil_co2/screens/Screens_H/se%C3%B1ales_transito.dart';
 import 'package:parcial_movil_co2/screens/notificaciones.dart';
+
+import 'Screens_H/señales_transito.dart';
 
 class Homepage extends StatelessWidget {
   static const String routename = "Homepage";
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: CustomAppBar(context: context),
       body: Stack(
@@ -25,21 +28,15 @@ class Homepage extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 110.0,
-            left: 15.0,
-            right: 15.0,
-            height: 290.0,
+            top: size.height * 0.10,
+            left: size.width * 0.060,
+            right: size.width * 0.060,
+            height: size.height * 0.4,
             child: Container(
-              
-              width: 100.0,
+              width: size.width * 0.85,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(20.0),
-                  topRight: Radius.circular(20.0),
-                  bottomLeft: Radius.circular(20.0),
-                  bottomRight: Radius.circular(20.0),
-                ),
+                borderRadius: BorderRadius.circular(size.height * 0.05),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.5),
@@ -65,19 +62,19 @@ class Homepage extends StatelessWidget {
                             Container(
                               decoration: BoxDecoration(
                                 color: const Color(0xFFCCCCCE),
-                                borderRadius: BorderRadius.circular(10.0),
+                                borderRadius: BorderRadius.circular(size.height * 0.02),
                               ),
-                              child: const Padding(
-                                padding: EdgeInsets.all(8.0),
+                              child: Padding(
+                                padding: EdgeInsets.all(size.height * 0.008),
                                 child: Icon(
                                   Icons.notifications,
-                                  size: 40.0,
+                                  size: size.height * 0.08,
                                   color: Colors.white,
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 5),
-                            const Text(
+                            SizedBox(height: size.height * 0.01),
+                            Text(
                               'Notificaciones',
                               style: TextStyle(color: Colors.black),
                             ),
@@ -94,19 +91,19 @@ class Homepage extends StatelessWidget {
                             Container(
                               decoration: BoxDecoration(
                                 color: const Color(0xFFCCCCCE),
-                                borderRadius: BorderRadius.circular(10.0),
+                                borderRadius: BorderRadius.circular(size.height * 0.02),
                               ),
-                              child: const Padding(
-                                padding: EdgeInsets.all(8.0),
+                              child: Padding(
+                                padding: EdgeInsets.all(size.height * 0.008),
                                 child: Icon(
                                   Icons.traffic,
-                                  size: 40.0,
+                                  size: size.height * 0.08,
                                   color: Colors.white,
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 5),
-                            const Column(
+                            SizedBox(height: size.height * 0.01),
+                            Column(
                               children: [
                                 Text(
                                   'Señales de',
@@ -131,19 +128,19 @@ class Homepage extends StatelessWidget {
                             Container(
                               decoration: BoxDecoration(
                                 color: const Color(0xFFCCCCCE),
-                                borderRadius: BorderRadius.circular(10.0),
+                                borderRadius: BorderRadius.circular(size.height * 0.02),
                               ),
-                              child: const Padding(
-                                padding: EdgeInsets.all(8.0),
+                              child: Padding(
+                                padding: EdgeInsets.all(size.height * 0.008),
                                 child: Icon(
                                   Icons.account_balance,
-                                  size: 40.0,
+                                  size: size.height * 0.08,
                                   color: Colors.white,
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 5),
-                            const Text(
+                            SizedBox(height: size.height * 0.01),
+                            Text(
                               'Abogados',
                               style: TextStyle(color: Colors.black),
                             ),
@@ -165,19 +162,19 @@ class Homepage extends StatelessWidget {
                             Container(
                               decoration: BoxDecoration(
                                 color: const Color(0xFFCCCCCE),
-                                borderRadius: BorderRadius.circular(10.0),
+                                borderRadius: BorderRadius.circular(size.height * 0.02),
                               ),
-                              child: const Padding(
-                                padding: EdgeInsets.all(8.0),
+                              child: Padding(
+                                padding: EdgeInsets.all(size.height * 0.008),
                                 child: Icon(
                                   Icons.gavel,
-                                  size: 40.0,
+                                  size: size.height * 0.08,
                                   color: Colors.white,
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 5),
-                            const Column(
+                            SizedBox(height: size.height * 0.01),
+                            Column(
                               children: [
                                 Text(
                                   'Leyes de',
@@ -202,19 +199,19 @@ class Homepage extends StatelessWidget {
                             Container(
                               decoration: BoxDecoration(
                                 color: const Color(0xFFCCCCCE),
-                                borderRadius: BorderRadius.circular(10.0),
+                                borderRadius: BorderRadius.circular(size.height * 0.02),
                               ),
-                              child: const Padding(
-                                padding: EdgeInsets.all(8.0),
+                              child: Padding(
+                                padding: EdgeInsets.all(size.height * 0.008),
                                 child: Icon(
                                   Icons.local_police,
-                                  size: 40.0,
+                                  size: size.height * 0.08,
                                   color: Colors.white,
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 5),
-                            const Column(
+                            SizedBox(height: size.height * 0.01),
+                            Column(
                               children: [
                                 Text(
                                   'Infracciones',
