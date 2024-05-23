@@ -5,6 +5,7 @@ import 'package:parcial_movil_co2/screens/Screens_H/leyes_transito.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/list_abogado.dart';
 import 'package:parcial_movil_co2/screens/notificaciones.dart';
 
+import 'Screens_H/buscar_leyes_transito.dart';
 import 'Screens_H/señales_transito.dart';
 
 class Homepage extends StatelessWidget {
@@ -106,13 +107,10 @@ class Homepage extends StatelessWidget {
                             Column(
                               children: [
                                 Text(
-                                  'Señales de',
+                                  'Señales',
                                   style: TextStyle(color: Colors.black),
                                 ),
-                                Text(
-                                  'tránsito',
-                                  style: TextStyle(color: Colors.black),
-                                ),
+                               
                               ],
                             ),
                           ],
@@ -155,7 +153,7 @@ class Homepage extends StatelessWidget {
                       GestureDetector(
                         onTap: () {
                           Navigator.pushReplacementNamed(
-                              context, LeyesTransito.routename);
+                              context, BuscarLeyes.routename);
                         },
                         child: Column(
                           children: [
