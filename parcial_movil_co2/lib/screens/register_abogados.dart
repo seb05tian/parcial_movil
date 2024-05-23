@@ -104,7 +104,6 @@ class _Register_abogadosState extends State<Register_abogados> {
           ),
         ),
         const SizedBox(width: 10),
-       
       ],
     );
   }

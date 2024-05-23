@@ -23,9 +23,6 @@ class BuscarInfracciones extends StatelessWidget {
               Container(
                 height: screenHeight * 0.25,
                 width: screenWidth * 0.95,
-                decoration: BoxDecoration(
-                  border: Border.all(width: 2, color: Colors.red),
-                ),
                 child: Column(
                   children: [
                     Row(
@@ -90,10 +87,6 @@ class BuscarInfracciones extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
-                              decoration: BoxDecoration(
-                                  border: Border.all(
-                                width: 2,
-                              )),
                               width: screenWidth * 0.9,
                               height: screenHeight * 0.08,
                               child: Row(
@@ -136,11 +129,9 @@ class BuscarInfracciones extends StatelessWidget {
                             const Divider(),
                             Container(
                               padding: const EdgeInsets.all(20),
-                              decoration:
-                                  BoxDecoration(border: Border.all(width: 2)),
                               width: screenWidth * 0.9,
                               child: const Text(
-                                'Sed ut perspiciatis unde efbbiefbiuefibuefbiuefbiuefbiuefbiuebfiuebfibiefbiefbiuefbiuefbiefbiefbiuefbiuebfiuebfibieufbiuefbiuefbiuefbefbiuebfubefbiuefbuiefbefefboefuoefbiuefbiuefbiuefbiuebiufbiuefbiubefbuefbui iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos wddwbdvwodwbiowdboudwbiudwbiudwiubdwiuvdwiuvwdviudwviudwviuwdviudwvdwviuwdviudwviudwdwviudvwiuvdwvuidwviudwviuwdqui ratione',
+                                'Sed ut perspnim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos ratione',
                                 softWrap: true,
                                 overflow: TextOverflow.visible,
                               ),

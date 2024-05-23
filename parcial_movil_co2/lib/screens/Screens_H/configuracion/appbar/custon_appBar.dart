@@ -19,7 +19,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       decoration: _boxDecoration(),
       child: SafeArea(
         child: SizedBox(
-          height: screenHeight * 0.3,
+          height: screenHeight * 0.25,
           width: screenWidth * 0.95,
           child: Column(
             children: [

@@ -62,7 +62,8 @@ class Homepage extends StatelessWidget {
                             Container(
                               decoration: BoxDecoration(
                                 color: const Color(0xFFCCCCCE),
-                                borderRadius: BorderRadius.circular(size.height * 0.02),
+                                borderRadius:
+                                    BorderRadius.circular(size.height * 0.02),
                               ),
                               child: Padding(
                                 padding: EdgeInsets.all(size.height * 0.008),
@@ -91,7 +92,8 @@ class Homepage extends StatelessWidget {
                             Container(
                               decoration: BoxDecoration(
                                 color: const Color(0xFFCCCCCE),
-                                borderRadius: BorderRadius.circular(size.height * 0.02),
+                                borderRadius:
+                                    BorderRadius.circular(size.height * 0.02),
                               ),
                               child: Padding(
                                 padding: EdgeInsets.all(size.height * 0.008),
@@ -106,11 +108,7 @@ class Homepage extends StatelessWidget {
                             Column(
                               children: [
                                 Text(
-                                  'Señales de',
-                                  style: TextStyle(color: Colors.black),
-                                ),
-                                Text(
-                                  'tránsito',
+                                  'Señales de tránsito',
                                   style: TextStyle(color: Colors.black),
                                 ),
                               ],
@@ -128,7 +126,8 @@ class Homepage extends StatelessWidget {
                             Container(
                               decoration: BoxDecoration(
                                 color: const Color(0xFFCCCCCE),
-                                borderRadius: BorderRadius.circular(size.height * 0.02),
+                                borderRadius:
+                                    BorderRadius.circular(size.height * 0.02),
                               ),
                               child: Padding(
                                 padding: EdgeInsets.all(size.height * 0.008),
@@ -162,7 +161,8 @@ class Homepage extends StatelessWidget {
                             Container(
                               decoration: BoxDecoration(
                                 color: const Color(0xFFCCCCCE),
-                                borderRadius: BorderRadius.circular(size.height * 0.02),
+                                borderRadius:
+                                    BorderRadius.circular(size.height * 0.02),
                               ),
                               child: Padding(
                                 padding: EdgeInsets.all(size.height * 0.008),
@@ -199,7 +199,8 @@ class Homepage extends StatelessWidget {
                             Container(
                               decoration: BoxDecoration(
                                 color: const Color(0xFFCCCCCE),
-                                borderRadius: BorderRadius.circular(size.height * 0.02),
+                                borderRadius:
+                                    BorderRadius.circular(size.height * 0.02),
                               ),
                               child: Padding(
                                 padding: EdgeInsets.all(size.height * 0.008),
