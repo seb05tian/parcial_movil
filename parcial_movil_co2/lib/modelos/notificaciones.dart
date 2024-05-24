@@ -1,22 +1,19 @@
-class SenalTransito {
+class Notificaciones {
   late final int id;
   final String nombre;
   final String descripcion;
-  final String imagen;
 
-  SenalTransito({
+  Notificaciones({
     required this.id,
     required this.nombre,
     required this.descripcion,
-    required this.imagen,
   });
 
-  factory SenalTransito.fromJson(Map<String, dynamic> json) {
-    return SenalTransito(
+  factory Notificaciones.fromjson(Map<String, dynamic> json) {
+    return Notificaciones(
       id: json['id'],
       nombre: json['nombre'],
       descripcion: json['descripcion'],
-      imagen: json['imagen'],
     );
   }
 }
