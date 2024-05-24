@@ -6,12 +6,7 @@
             "descripcion": "Triangular, roja y blanca, con la palabra PARE. Obliga a detenerse completamente en intersecciones.",
             "imagen": "assets/img/señalesTransito/1.jpg"
         },
-        {
-            "id": 1,
-            "nombre": "Ceda el Paso",
-            "descripcion": "Triangular, roja y blanca, con CEDA EL PASO. Indica ceder el paso a otros vehículos o peatones.",
-            "imagen": "assets/img/señalesTransito/1.jpg"
-        },
+        
         {
             "id": 2,
             "nombre": "Prohibido el Paso",
@@ -70,7 +65,7 @@
             "id": 11,
             "nombre": "Prohibido Estacionar",
             "descripcion": "Rectangular, con una letra 'P' roja cruzada sobre fondo blanco. Indica que está prohibido estacionar en esa área.",
-            "imagen": "assets/img/señalesTransito/11,png"
+            "imagen": "assets/img/señalesTransito/11.png"
         },
         {
             "id": 12,
