@@ -37,7 +37,6 @@ class MyApp extends StatelessWidget {
         register.routename: (context) => register(),
         SenalesTransito.routename: (context) => SenalesTransito(),
         ListAbogado.routename: (context) => ListAbogado(),
-        
         BuscarInfracciones.routename: (context) => BuscarInfracciones(),
         Editar_perfil.routename: (context) => Editar_perfil(),
         BuscarLeyes.routename: (context) => BuscarLeyes(),

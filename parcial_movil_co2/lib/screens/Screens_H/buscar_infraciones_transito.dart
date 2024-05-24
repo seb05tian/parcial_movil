@@ -64,7 +64,7 @@ class _BuscarInfraccionesState extends State<BuscarInfracciones> {
     setState(() {
       _filteredInfracciones = _infracciones
           .where((infraccion) =>
-              infraccion.nombre.toLowerCase().contains(keyword.toLowerCase()))
+              infraccion.id.toLowerCase().contains(keyword.toLowerCase()))
           .toList();
     });
   }
@@ -83,7 +83,7 @@ class _BuscarInfraccionesState extends State<BuscarInfracciones> {
           child: Column(
             children: [
               Container(
-                height: screenHeight * 0.25,
+                height: screenHeight * 0.17,
                 width: screenWidth * 0.95,
                 child: Column(
                   children: [
@@ -103,24 +103,33 @@ class _BuscarInfraccionesState extends State<BuscarInfracciones> {
                     const SizedBox(
                       height: 35,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Expanded(
-                          child: TextField(
-                            onChanged: _filterInfracciones,
-                            decoration: InputDecoration(
-                              hintText: 'Buscar por infracción...',
-                              contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 15),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(25.0),
-                              ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(25),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 2,
+                              blurRadius: 5,
+                              offset: const Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        child: TextField(
+                          onChanged: _filterInfracciones,
+                          decoration: InputDecoration(
+                            hintText: 'Buscar por infracción...',
+                            contentPadding: const EdgeInsets.symmetric(
+                                horizontal: 20, vertical: 15),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
                             ),
                           ),
                         ),
-                      ],
+                      ),
                     ),
                   ],
                 ),
@@ -179,7 +188,8 @@ class _BuscarInfraccionesState extends State<BuscarInfracciones> {
                                           decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(10),
-                                            color: Colors.grey.withOpacity(0.5),
+                                            color: Color.fromARGB(
+                                                255, 139, 75, 223),
                                           ),
                                           child: Row(
                                             mainAxisAlignment:

@@ -35,8 +35,8 @@ class _BuscarLeyesState extends State<BuscarLeyes> {
   void _filterLeyes(String keyword) {
     setState(() {
       _filteredLeyes = _leyes
-          .where((ley) =>
-              ley.nombre.toLowerCase().contains(keyword.toLowerCase()))
+          .where(
+              (ley) => ley.nombre.toLowerCase().contains(keyword.toLowerCase()))
           .toList();
     });
   }
@@ -83,14 +83,30 @@ class _BuscarLeyesState extends State<BuscarLeyes> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Expanded(
-                          child: TextField(
-                            onChanged: _filterLeyes,
-                            decoration: InputDecoration(
-                              hintText: 'Buscar por ley...',
-                              contentPadding: EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 15),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(25.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(25),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 2,
+                                  blurRadius: 5,
+                                  offset: const Offset(0, 3),
+                                ),
+                              ],
+                            ),
+                            child: TextField(
+                              onChanged: _filterLeyes,
+                              decoration: InputDecoration(
+                                hintText: 'Buscar por ley...',
+                                contentPadding: EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 15,
+                                ),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(25.0),
+                                ),
                               ),
                             ),
                           ),
@@ -125,49 +141,52 @@ class _BuscarLeyesState extends State<BuscarLeyes> {
                               ],
                             ),
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Container(
-                                  width: screenWidth * 0.9,
-                                  height: screenHeight * 0.08,
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Container(
-                                        width: screenWidth * 0.12,
-                                        padding: const EdgeInsets.all(8),
-                                        decoration: const BoxDecoration(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(10)),
-                                          color: Color.fromARGB(
-                                              255, 139, 75, 223),
-                                        ),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            Text(
-                                              'Art ${ley.id}',
-                                              style: TextStyle(
-                                                  color: Colors.white),
-                                            ),
-                                          ],
-                                        ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      margin: EdgeInsets.only(top: 5, left: 10),
+                                      width: screenWidth *
+                                          0.16, // Ajustamos el ancho para que quepa 'Art' y el número de la ley
+                                      padding: const EdgeInsets.all(8),
+                                      decoration: const BoxDecoration(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(10)),
+                                        color:
+                                            Color.fromARGB(255, 139, 75, 223),
                                       ),
-                                      Text(
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            'Art ${ley.id}',
+                                            style:
+                                                TextStyle(color: Colors.white),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                        width: screenWidth *
+                                            0.03), // Ajusta el espacio entre el número de la ley y el nombre
+                                    Expanded(
+                                      child: Text(
                                         ley.nombre,
                                         style: TextStyle(
                                           fontWeight: FontWeight.w700,
-                                          fontSize: screenSizeFont * 0.022,
+                                          fontSize: screenSizeFont * 0.015,
                                           color: Color(0xFF392B54),
                                         ),
-                                      )
-                                    ],
-                                  ),
+                                      ),
+                                    )
+                                  ],
                                 ),
                                 const Divider(),
                                 Container(

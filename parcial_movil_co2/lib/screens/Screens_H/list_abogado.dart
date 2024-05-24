@@ -25,12 +25,14 @@ class _ListAbogadoState extends State<ListAbogado> {
   }
 
   Future<void> _loadAbogados() async {
-    final String data =
-        await DefaultAssetBundle.of(context).loadString('assets/Data/abogado.json');
+    final String data = await DefaultAssetBundle.of(context)
+        .loadString('assets/Data/abogado.json');
     final parsedData = json.decode(data);
     final List<dynamic> abogadosJson = parsedData['abogado'];
     setState(() {
-      abogados = abogadosJson.map((abogadoJson) => Abogado.fromJson(abogadoJson)).toList();
+      abogados = abogadosJson
+          .map((abogadoJson) => Abogado.fromJson(abogadoJson))
+          .toList();
       filteredAbogados = List.from(abogados);
     });
   }
@@ -41,7 +43,8 @@ class _ListAbogadoState extends State<ListAbogado> {
         filteredAbogados = List.from(abogados);
       } else {
         filteredAbogados = abogados
-            .where((abogado) => abogado.nombre.toLowerCase().contains(keyword.toLowerCase()))
+            .where((abogado) =>
+                abogado.nombre.toLowerCase().contains(keyword.toLowerCase()))
             .toList();
       }
     });
@@ -61,7 +64,7 @@ class _ListAbogadoState extends State<ListAbogado> {
           child: Column(
             children: [
               SizedBox(
-                height: screenHeight * 0.25,
+                height: screenHeight * 0.21,
                 width: screenWidth * 0.95,
                 child: Column(
                   children: [
@@ -92,7 +95,35 @@ class _ListAbogadoState extends State<ListAbogado> {
                       ],
                     ),
                     const SizedBox(
-                      height: 35,
+                      height: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(25),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 2,
+                              blurRadius: 5,
+                              offset: const Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        child: TextField(
+                          onChanged: _filterAbogados,
+                          decoration: InputDecoration(
+                            hintText: 'Buscar por nombre de abogado...',
+                            contentPadding: const EdgeInsets.symmetric(
+                                horizontal: 20, vertical: 15),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -100,19 +131,6 @@ class _ListAbogadoState extends State<ListAbogado> {
               Expanded(
                 child: Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: TextField(
-                        onChanged: _filterAbogados,
-                        decoration: InputDecoration(
-                          hintText: 'Buscar por nombre de abogado...',
-                          contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25.0),
-                          ),
-                        ),
-                      ),
-                    ),
                     const SizedBox(height: 10),
                     Expanded(
                       child: ListView.builder(
@@ -120,7 +138,8 @@ class _ListAbogadoState extends State<ListAbogado> {
                         itemBuilder: (context, index) {
                           final abogado = filteredAbogados[index];
                           return Container(
-                            margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                            margin: const EdgeInsets.symmetric(
+                                vertical: 8, horizontal: 16),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(10),
@@ -141,11 +160,13 @@ class _ListAbogadoState extends State<ListAbogado> {
                                   width: screenWidth * 0.9,
                                   height: screenHeight * 0.1,
                                   child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
                                     children: [
                                       Container(
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(50),
+                                          borderRadius:
+                                              BorderRadius.circular(50),
                                           border: Border.all(
                                             width: 1,
                                             color: const Color(0xFF392B54),
@@ -166,20 +187,28 @@ class _ListAbogadoState extends State<ListAbogado> {
                                         ),
                                       ),
                                       Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Container(
-                                            margin: const EdgeInsets.only(top: 7),
+                                            margin:
+                                                const EdgeInsets.only(top: 7),
                                             child: Text(
                                               abogado.nombre,
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w700,
-                                                fontSize: screenSizeFont * 0.022,
-                                                color: const Color.fromARGB(255, 139, 75, 223),
+                                                fontSize:
+                                                    screenSizeFont * 0.022,
+                                                color: const Color.fromARGB(
+                                                    255, 139, 75, 223),
                                               ),
                                             ),
                                           ),
                                           Container(
-                                            margin: const EdgeInsets.only(right: 100),
+                                            margin: EdgeInsets.only(
+                                                left: screenWidth * 0.01),
                                             child: Row(
                                               children: List.generate(
                                                 abogado.puntuacion,
@@ -211,10 +240,11 @@ class _ListAbogadoState extends State<ListAbogado> {
                                     Button(
                                       onPressed: () {
                                         Navigator.pushReplacementNamed(
-                                          context, ChatScreen.routename);
+                                            context, ChatScreen.routename);
                                       },
                                       titulo: 'Contastar',
-                                      color: const Color.fromARGB(255, 139, 75, 223),
+                                      color: const Color.fromARGB(
+                                          255, 139, 75, 223),
                                     ),
                                   ],
                                 ),

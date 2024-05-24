@@ -62,7 +62,7 @@ class _SenalesTransitoState extends State<SenalesTransito> {
           child: Column(
             children: [
               SizedBox(
-                height: screenHeight * 0.20,
+                height: screenHeight * 0.17,
                 width: screenWidth * 0.95,
                 child: Column(
                   children: [
@@ -83,11 +83,29 @@ class _SenalesTransitoState extends State<SenalesTransito> {
                     SizedBox(height: 15),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                      child: TextField(
-                        controller: _controller,
-                        decoration: InputDecoration(
-                          labelText: 'Buscar señal',
-                          border: OutlineInputBorder(),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(25),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 2,
+                              blurRadius: 5,
+                              offset: const Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        child: TextField(
+                          controller: _controller,
+                          decoration: InputDecoration(
+                            labelText: 'Buscar señal',
+                            contentPadding: const EdgeInsets.symmetric(
+                                horizontal: 20, vertical: 15),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                          ),
                         ),
                       ),
                     ),

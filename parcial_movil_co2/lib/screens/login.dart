@@ -23,7 +23,6 @@ class login extends StatelessWidget {
             ),
           ),
 
-          
           Container(
             height: size.height * 0.3,
             decoration: const BoxDecoration(
@@ -54,9 +53,9 @@ class login extends StatelessWidget {
             ),
           ),
 
-          
           Padding(
-            padding: EdgeInsets.fromLTRB(size.width * 0.075, size.height * 0.02, size.width * 0.05, 0.0),
+            padding: EdgeInsets.fromLTRB(
+                size.width * 0.075, size.height * 0.02, size.width * 0.05, 0.0),
             child: Text(
               'Nombre de usuario',
               style: TextStyle(
@@ -66,7 +65,6 @@ class login extends StatelessWidget {
             ),
           ),
 
-          
           Padding(
             padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
             child: Container(
@@ -94,7 +92,8 @@ class login extends StatelessWidget {
 
           // Texto "Contraseña" arriba del campo de texto
           Padding(
-            padding: EdgeInsets.fromLTRB(size.width * 0.075, size.height * 0.02, size.width * 0.05, 0.0),
+            padding: EdgeInsets.fromLTRB(
+                size.width * 0.075, size.height * 0.02, size.width * 0.05, 0.0),
             child: Text(
               'Contraseña',
               style: TextStyle(
