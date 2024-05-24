@@ -1,15 +1,94 @@
 {
-    "leyesTransito" : [
+    "leyesTransito": [
         {
             "id": 0,
             "nombre": "Ley de Prioridad de Paso",
             "descripcion": "Los conductores deben ceder el paso a los vehículos que se acerquen desde su derecha en intersecciones y cruces, a menos que las señales de tráfico indiquen lo contrario."
-          
         },
         {
             "id": 1,
             "nombre": "Ley de Límites de Velocidad",
             "descripcion": "Se establecen límites de velocidad máxima en diferentes tipos de carreteras y áreas para garantizar la seguridad y regular el flujo de tráfico."
+        },
+        {
+            "id": 2,
+            "nombre": "Ley de Uso del Cinturón de Seguridad",
+            "descripcion": "Todos los ocupantes del vehículo deben usar el cinturón de seguridad en todo momento mientras el vehículo está en movimiento."
+        },
+        {
+            "id": 3,
+            "nombre": "Ley de Uso del Teléfono Móvil",
+            "descripcion": "Se prohíbe el uso del teléfono móvil mientras se conduce, excepto cuando se utilice un dispositivo manos libres."
+        },
+        {
+            "id": 4,
+            "nombre": "Ley de Alcohol y Drogas",
+            "descripcion": "Se prohíbe conducir bajo los efectos del alcohol, drogas o cualquier sustancia que afecte la capacidad de conducir de manera segura."
+        },
+        {
+            "id": 5,
+            "nombre": "Ley de Respeto a los Semáforos",
+            "descripcion": "Los conductores deben obedecer las señales de los semáforos, deteniéndose en rojo y avanzando en verde."
+        },
+        {
+            "id": 6,
+            "nombre": "Ley de Mantenimiento de Vehículos",
+            "descripcion": "Los propietarios de vehículos deben asegurarse de que estén en condiciones adecuadas de funcionamiento, incluidos frenos, luces y neumáticos."
+        },
+        {
+            "id": 7,
+            "nombre": "Ley de Distancia de Seguridad",
+            "descripcion": "Los conductores deben mantener una distancia segura con respecto al vehículo que tienen delante para evitar colisiones por alcance."
+        },
+        {
+            "id": 8,
+            "nombre": "Ley de Respeto a las Zonas Peatonales",
+            "descripcion": "Los conductores deben ceder el paso a los peatones en pasos de cebra y zonas peatonales, garantizando su seguridad."
+        },
+        {
+            "id": 9,
+            "nombre": "Ley de Uso de Luces",
+            "descripcion": "Los conductores deben usar luces delanteras y traseras adecuadas según las condiciones de visibilidad y las horas del día."
+        },
+        {
+            "id": 10,
+            "nombre": "Ley de Respeto a las Señales de Tránsito",
+            "descripcion": "Los conductores deben obedecer todas las señales de tránsito, incluidas las de velocidad, prioridad y prohibición."
+        },
+        {
+            "id": 11,
+            "nombre": "Ley de Educación Vial",
+            "descripcion": "Se promueve la educación vial para aumentar la conciencia y el conocimiento sobre las normas de tráfico y seguridad vial."
+        },
+        {
+            "id": 12,
+            "nombre": "Ley de Control de Emisiones",
+            "descripcion": "Los vehículos deben cumplir con los estándares de emisiones establecidos para proteger el medio ambiente y la salud pública."
+        },
+        {
+            "id": 13,
+            "nombre": "Ley de Respeto a las Zonas Escolares",
+            "descripcion": "Se debe conducir con especial precaución en las zonas escolares, respetando los límites de velocidad y cediendo el paso a los niños."
+        },
+        {
+            "id": 14,
+            "nombre": "Ley de Respeto a las Ambulancias y Vehículos de Emergencia",
+            "descripcion": "Los conductores deben ceder el paso y facilitar el paso a las ambulancias y otros vehículos de emergencia con luces y sirenas activadas."
+        },
+        {
+            "id": 15,
+            "nombre": "Ley de Conducción Defensiva",
+            "descripcion": "Se promueve la conducción defensiva, anticipándose a situaciones de peligro y manteniendo una actitud de precaución en todo momento."
+        },
+        {
+            "id": 16,
+            "nombre": "Ley de Respeto a las Normas de Estacionamiento",
+            "descripcion": "Los conductores deben estacionar sus vehículos de acuerdo con las normativas locales, evitando obstruir el tráfico o zonas peatonales."
+        },
+        {
+            "id": 17,
+            "nombre": "Ley de Uso de Sistemas de Retención Infantil",
+            "descripcion": "Los niños deben viajar en sistemas de retención infantil adecuados a su edad, peso y estatura para garantizar su seguridad en el vehículo."
         }
-        ]
+    ]
 }

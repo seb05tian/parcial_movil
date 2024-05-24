@@ -1,0 +1,60 @@
+{
+    "abogado": [
+        {
+            "id": 0,
+            "nombre": "Fernando Ramos",
+            "descripcion": "Especialista en infracciones de estacionamiento en lugares prohibidos, como zonas de carga y descarga o espacios reservados.",
+            "puntuacion": 3,
+            "imagen": "assets/img/abogado/1.jpg"
+        },
+        {
+            "id": 1,
+            "nombre": "María López",
+            "descripcion": "Experta en casos de exceso de velocidad y violaciones de límites de velocidad.",
+            "puntuacion": 4,
+            "imagen": "assets/img/abogado/5.png"
+        },
+        {
+            "id": 2,
+            "nombre": "Juan Martínez",
+            "descripcion": "Abogado especializado en casos de conducir bajo los efectos del alcohol y drogas.",
+            "puntuacion": 5,
+            "imagen": "assets/img/abogado/2.png"
+        },
+        {
+            "id": 3,
+            "nombre": "Laura González",
+            "descripcion": "Conocedora de las leyes de tránsito relacionadas con el uso del teléfono móvil mientras se conduce.",
+            "puntuacion": 4,
+            "imagen": "assets/img/abogado/6.jpg"
+        },
+        {
+            "id": 4,
+            "nombre": "Carlos Rodríguez",
+            "descripcion": "Especialista en casos de estacionamiento en rampas para discapacitados y otras infracciones relacionadas con la accesibilidad.",
+            "puntuacion": 3,
+            "imagen": "assets/img/abogado/3.jpg"
+        },
+        {
+            "id": 5,
+            "nombre": "Ana Sánchez",
+            "descripcion": "Experta en casos de conducción sin la documentación requerida, como licencia de conducir o seguro obligatorio.",
+            "puntuacion": 4,
+            "imagen": "assets/img/abogado/7.jpg"
+        },
+        {
+            "id": 6,
+            "nombre": "José Pérez",
+            "descripcion": "Abogado especializado en casos de circular sin placas de matrícula y otras infracciones relacionadas con la identificación del vehículo.",
+            "puntuacion": 3,
+            "imagen": "assets/img/abogado/4.jpg"
+        },
+        {
+            "id": 7,
+            "nombre": "Elena García",
+            "descripcion": "Conocedora de las leyes de tránsito relacionadas con el uso adecuado de las luces del vehículo.",
+            "puntuacion": 5,
+            "imagen": "assets/img/abogado/8.jpg"
+        }
+    ]
+}

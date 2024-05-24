@@ -1,0 +1,74 @@
+{
+    "infraccionesTransito": [
+        {
+            "id": "B10",
+            "nombre": "Estacionamiento en lugar prohibido",
+            "inmovilizacion": "Si aplica inmovilizacion",
+            "descripcion": "Esta infracción ocurre cuando se estaciona un vehículo en un área donde está expresamente prohibido, como zonas de carga y descarga o espacios reservados.",
+            "pasosLegales": "Recibir notificación de la infracción. Pagar la multa correspondiente o presentar una apelación. Si se aplica la inmovilización, el vehículo será inmovilizado y se deberá pagar una tarifa adicional por la liberación del mismo."
+        },
+        {
+            "id": "B20",
+            "nombre": "Circular sin el cinturón de seguridad",
+            "inmovilizacion": "No aplica inmovilizacion",
+            "descripcion": "Esta infracción ocurre cuando un conductor o pasajero circula sin utilizar el cinturón de seguridad, lo cual es obligatorio por ley para garantizar la seguridad en caso de colisión.",
+            "pasosLegales": "Recibir notificación de la infracción. Pagar la multa correspondiente o presentar una apelación."
+        },
+        {
+            "id": "B30",
+            "nombre": "Exceso de velocidad",
+            "inmovilizacion": "No aplica inmovilizacion",
+            "descripcion": "Esta infracción ocurre cuando un conductor supera los límites de velocidad establecidos para la vía en la que circula, poniendo en riesgo la seguridad vial.",
+            "pasosLegales": "Recibir notificación de la infracción. Pagar la multa correspondiente o presentar una apelación."
+        },
+        {
+            "id": "B40",
+            "nombre": "Conducir bajo los efectos del alcohol",
+            "inmovilizacion": "Si aplica inmovilizacion",
+            "descripcion": "Esta infracción ocurre cuando un conductor opera un vehículo después de haber consumido alcohol en una cantidad que excede los límites legales, lo que representa un grave peligro para la seguridad vial.",
+            "pasosLegales": "Recibir notificación de la infracción. Pagar la multa correspondiente o presentar una apelación. Si se aplica la inmovilización, el vehículo será inmovilizado y se deberá pagar una tarifa adicional por la liberación del mismo."
+        },
+        {
+            "id": "B50",
+            "nombre": "No respetar señales de tránsito",
+            "inmovilizacion": "No aplica inmovilizacion",
+            "descripcion": "Esta infracción ocurre cuando un conductor no respeta las señales de tránsito, como semáforos en rojo, señales de alto, señales de ceda el paso, entre otras, lo que puede causar accidentes y obstruir el flujo vehicular.",
+            "pasosLegales": "Recibir notificación de la infracción. Pagar la multa correspondiente o presentar una apelación."
+        },
+        {
+            "id": "B60",
+            "nombre": "Conducir utilizando el teléfono móvil",
+            "inmovilizacion": "No aplica inmovilizacion",
+            "descripcion": "Esta infracción ocurre cuando un conductor utiliza un teléfono móvil mientras conduce, lo cual puede distraer su atención y aumentar el riesgo de accidentes de tránsito.",
+            "pasosLegales": "Recibir notificación de la infracción. Pagar la multa correspondiente o presentar una apelación."
+        },
+        {
+            "id": "B70",
+            "nombre": "Estacionamiento en rampa para discapacitados",
+            "inmovilizacion": "Si aplica inmovilizacion",
+            "descripcion": "Esta infracción ocurre cuando se estaciona un vehículo en una rampa destinada exclusivamente para personas con discapacidad, impidiendo su acceso y generando una situación de discriminación.",
+            "pasosLegales": "Recibir notificación de la infracción. Pagar la multa correspondiente o presentar una apelación. Si se aplica la inmovilización, el vehículo será inmovilizado y se deberá pagar una tarifa adicional por la liberación del mismo."
+        },
+        {
+            "id": "B80",
+            "nombre": "Circular sin la documentación requerida",
+            "inmovilizacion": "Si aplica inmovilizacion",
+            "descripcion": "Esta infracción ocurre cuando un conductor circula sin llevar consigo la documentación obligatoria del vehículo, como la licencia de conducir, el seguro obligatorio y el permiso de circulación, lo que impide verificar la legalidad del mismo en caso de control policial.",
+            "pasosLegales": "Recibir notificación de la infracción. Pagar la multa correspondiente o presentar una apelación. Si se aplica la inmovilización, el vehículo será inmovilizado y se deberá pagar una tarifa adicional por la liberación del mismo."
+        },
+        {
+            "id": "B90",
+            "nombre": "Circular sin placas de matrícula",
+            "inmovilizacion": "Si aplica inmovilizacion",
+            "descripcion": "Esta infracción ocurre cuando un vehículo circula sin llevar las placas de matrícula correspondientes, lo que dificulta su identificación y registro en caso de infracciones o incidentes de tránsito.",
+            "pasosLegales": "Recibir notificación de la infracción. Pagar la multa correspondiente o presentar una apelación. Si se aplica la inmovilización, el vehículo será inmovilizado y se deberá pagar una tarifa adicional por la liberación del mismo."
+        },
+        {
+            "id": "B100",
+            "nombre": "Circular sin luces encendidas durante la noche",
+            "inmovilizacion": "No aplica inmovilizacion",
+            "descripcion": "Esta infracción ocurre cuando un conductor circula durante la noche sin encender las luces del vehículo, lo que reduce la visibilidad y aumenta el riesgo de accidentes de tránsito.",
+            "pasosLegales": "Recibir notificación de la infracción. Pagar la multa correspondiente o presentar una apelación."
+        }
+    ]
+}

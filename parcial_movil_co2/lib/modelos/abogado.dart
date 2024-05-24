@@ -1,22 +1,25 @@
-class SenalTransito {
+class Abogado {
   late final int id;
   final String nombre;
   final String descripcion;
+  final int puntuacion;
   final String imagen;
 
-  SenalTransito({
+  Abogado({
     required this.id,
     required this.nombre,
     required this.descripcion,
-    required this.imagen,
+    required this.puntuacion,
+    this.imagen = "",
   });
 
-  factory SenalTransito.fromJson(Map<String, dynamic> json) {
-    return SenalTransito(
+  factory Abogado.fromJson(Map<String, dynamic> json) {
+    return Abogado(
       id: json['id'],
       nombre: json['nombre'],
       descripcion: json['descripcion'],
-      imagen: json['imagen'],
+      puntuacion: json['puntuacion'],
+      imagen: json['imagen'] ?? "",
     );
   }
 }
