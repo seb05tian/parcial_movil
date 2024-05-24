@@ -1,0 +1,142 @@
+{
+    "SeñalesTransito" : [
+        {
+            "id": 0,
+            "nombre": "Pare",
+            "descripcion": "Triangular, roja y blanca, con la palabra PARE. Obliga a detenerse completamente en intersecciones.",
+            "imagen": " "
+        },
+        {
+            "id": 1,
+            "nombre": "Ceda el Paso",
+            "descripcion": "Triangular, roja y blanca, con CEDA EL PASO. Indica ceder el paso a otros vehículos o peatones.",
+            "imagen": ""
+        },
+        {
+            "id": 2,
+            "nombre": "Prohibido el Paso",
+            "descripcion": "Circular, con una línea roja diagonal sobre un fondo blanco. Indica que está prohibido pasar.",
+            "imagen": ""
+        },
+        {
+            "id": 3,
+            "nombre": "Limite de Velocidad",
+            "descripcion": "Circular, con un número negro sobre fondo blanco dentro de un círculo rojo. Indica el límite de velocidad permitido.",
+            "imagen": ""
+        },
+        {
+            "id": 4,
+            "nombre": "Cruce de Peatones",
+            "descripcion": "Cuadrada, con la silueta de una persona caminando en negro sobre fondo amarillo. Indica un cruce peatonal.",
+            "imagen": ""
+        },
+        {
+            "id": 5,
+            "nombre": "Curva Peligrosa",
+            "descripcion": "Triangular, con una curva negra sobre fondo amarillo. Advierte sobre una curva peligrosa en la carretera.",
+            "imagen": ""
+        },
+        {
+            "id": 6,
+            "nombre": "Desvío",
+            "descripcion": "Cuadrada, con flechas negras indicando una dirección alternativa sobre fondo blanco. Indica un desvío en la ruta.",
+            "imagen": ""
+        },
+        {
+            "id": 7,
+            "nombre": "Paso de Cebra",
+            "descripcion": "Rectangular, con líneas blancas sobre fondo negro, simulando un cruce de peatones. Indica un paso de cebra.",
+            "imagen": ""
+        },
+        {
+            "id": 8,
+            "nombre": "Peligro: Cruce de Animales",
+            "descripcion": "Triangular, con la silueta de un animal sobre fondo amarillo. Advierte sobre la posibilidad de cruces de animales en la carretera.",
+            "imagen": ""
+        },
+        {
+            "id": 9,
+            "nombre": "Zona Escolar",
+            "descripcion": "Rectangular, con la imagen de un niño cruzando sobre fondo amarillo. Indica una zona escolar, donde se debe tener precaución con los niños.",
+            "imagen": ""
+        },
+        {
+            "id": 10,
+            "nombre": "Ceda el Paso a los Peatones",
+            "descripcion": "Triangular, con la imagen de una persona caminando sobre fondo blanco. Indica ceder el paso a los peatones.",
+            "imagen": ""
+        },
+        {
+            "id": 11,
+            "nombre": "Prohibido Estacionar",
+            "descripcion": "Rectangular, con una letra 'P' roja cruzada sobre fondo blanco. Indica que está prohibido estacionar en esa área.",
+            "imagen": ""
+        },
+        {
+            "id": 12,
+            "nombre": "Deslizamiento de Tierra",
+            "descripcion": "Triangular, con una montaña con rocas cayendo sobre fondo amarillo. Advierte sobre la posibilidad de deslizamiento de tierra.",
+            "imagen": ""
+        },
+        {
+            "id": 13,
+            "nombre": "Cambio de Sentido",
+            "descripcion": "Circular, con una flecha que cambia de dirección sobre fondo blanco. Indica un cambio de sentido obligatorio.",
+            "imagen": ""
+        },
+        {
+            "id": 14,
+            "nombre": "Tráfico Lento",
+            "descripcion": "Rectangular, con la letra 'T' de tráfico en amarillo sobre fondo negro. Indica tráfico lento.",
+            "imagen": ""
+        },
+        {
+            "id": 15,
+            "nombre": "Cruce de Ferrocarril",
+            "descripcion": "Rectangular, con la imagen de una vía de tren sobre fondo blanco. Indica un cruce de ferrocarril.",
+            "imagen": ""
+        },
+        {
+            "id": 16,
+            "nombre": "Peligro: Caida de Rocas",
+            "descripcion": "Triangular, con una montaña con rocas cayendo sobre fondo amarillo. Advierte sobre el peligro de caída de rocas.",
+            "imagen": ""
+        },
+        {
+            "id": 17,
+            "nombre": "Intersección",
+            "descripcion": "Cuadrada, con una cruz blanca sobre fondo negro. Indica una intersección en la carretera.",
+            "imagen": ""
+        },
+        {
+            "id": 18,
+            "nombre": "Calle sin Salida",
+            "descripcion": "Rectangular, con una flecha negra apuntando hacia una pared sobre fondo blanco. Indica que la calle no tiene salida.",
+            "imagen": ""
+        },
+        {
+            "id": 19,
+            "nombre": "Paso de Emergencia",
+            "descripcion": "Cuadrada, con una cruz roja sobre fondo blanco. Indica un paso para vehículos de emergencia.",
+            "imagen": ""
+        },
+        {
+            "id": 20,
+            "nombre": "Carril de Bicicletas",
+            "descripcion": "Rectangular, con la silueta de una bicicleta sobre fondo blanco. Indica un carril exclusivo para bicicletas.",
+            "imagen": ""
+        },
+        {
+            "id": 21,
+            "nombre": "Paso de Ganado",
+            "descripcion": "Triangular, con la silueta de una vaca sobre fondo amarillo. Advierte sobre la posibilidad de paso de ganado.",
+            "imagen": ""
+        },
+        {
+            "id": 22,
+            "nombre": "Doble Sentido",
+            "descripcion": "Cuadrada, con dos flechas apuntando en direcciones opuestas sobre fondo blanco. Indica que la vía tiene doble sentido de circulación.",
+            "imagen": ""
+        }
+    ]
+}

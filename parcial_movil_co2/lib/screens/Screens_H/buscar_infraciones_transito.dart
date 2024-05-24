@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar2.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/botones/botones.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/buscador/message_field_box.dart';
+import 'package:parcial_movil_co2/screens/Screens_H/leyes_transito.dart';
 import 'package:parcial_movil_co2/screens/derechos_deberes.dart';
 
 class BuscarInfracciones extends StatelessWidget {
@@ -86,44 +87,52 @@ class BuscarInfracciones extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Container(
-                              width: screenWidth * 0.9,
-                              height: screenHeight * 0.08,
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Container(
-                                    width: screenWidth * 0.12,
-                                    padding: const EdgeInsets.all(8),
-                                    decoration: const BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(10)),
-                                      color: Color.fromARGB(255, 139, 75, 223),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.pushReplacementNamed(
+                                    context, LeyesTransito.routename);
+                              },
+                              child: Container(
+                                width: screenWidth * 0.9,
+                                height: screenHeight * 0.08,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Container(
+                                      width: screenWidth * 0.12,
+                                      padding: const EdgeInsets.all(8),
+                                      decoration: const BoxDecoration(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(10)),
+                                        color:
+                                            Color.fromARGB(255, 139, 75, 223),
+                                      ),
+                                      child: const Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            'B10',
+                                            style:
+                                                TextStyle(color: Colors.white),
+                                          ),
+                                        ],
+                                      ),
                                     ),
-                                    child: const Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          'B10',
-                                          style: TextStyle(color: Colors.white),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Text(
-                                    'No aplica inmovilización',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: screenSizeFont * 0.022,
-                                      color: const Color.fromARGB(
-                                          255, 139, 75, 223),
-                                    ),
-                                  )
-                                ],
+                                    Text(
+                                      'No aplica inmovilización',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: screenSizeFont * 0.022,
+                                        color: const Color.fromARGB(
+                                            255, 139, 75, 223),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                             const Divider(),

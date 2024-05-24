@@ -1,0 +1,15 @@
+{
+    "leyesTransito" : [
+        {
+            "id": 0,
+            "nombre": "Ley de Prioridad de Paso",
+            "descripcion": "Los conductores deben ceder el paso a los vehículos que se acerquen desde su derecha en intersecciones y cruces, a menos que las señales de tráfico indiquen lo contrario."
+          
+        },
+        {
+            "id": 1,
+            "nombre": "Ley de Límites de Velocidad",
+            "descripcion": "Se establecen límites de velocidad máxima en diferentes tipos de carreteras y áreas para garantizar la seguridad y regular el flujo de tráfico."
+        }
+        ]
+}
