@@ -7,7 +7,6 @@ import 'Screens_H/configuracion/appbar/custon_appBar2.dart';
 import 'her_message_bubble.dart';
 import 'my_message_bubble.dart';
 
-
 class ChatScreen extends StatelessWidget {
   static const String routename = "Chats";
   const ChatScreen({super.key});
@@ -21,7 +20,6 @@ class ChatScreen extends StatelessWidget {
     );
   }
 }
-
 
 class _ChatView extends StatelessWidget {
   @override

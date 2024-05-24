@@ -112,7 +112,6 @@ class Homepage extends StatelessWidget {
                                   'Señales de tránsito',
                                   style: TextStyle(color: Colors.black),
                                 ),
-                               
                               ],
                             ),
                           ],
