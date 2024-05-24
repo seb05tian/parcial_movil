@@ -32,72 +32,8 @@
             "descripcion": "Se reportan congestiones vehiculares en tu ruta habitual. Considera alternativas de desplazamiento o planifica tu viaje con anticipación para evitar retrasos."
           }
         ]
-      },
-      {
-        "nombre": "Laura Smith",
-        "correo": "laura@corre.com",
-        "contraseña": "abcdef",
-        "imagen": "assets/img/usuarios/3.jpg",
-        "notificaciones": [
-          {
-            "id": 1,
-            "nombre": "Recordatorio de inspección técnica vehicular",
-            "descripcion": "Es hora de realizar la inspección técnica de tu vehículo. Programa una cita en el centro de inspección más cercano para mantener tu vehículo en regla."
-          },
-          {
-            "id": 2,
-            "nombre": "Alerta de obras en la vía",
-            "descripcion": "Se están realizando trabajos de mantenimiento en tu ruta habitual. Prepárate para posibles desvíos y retrasos en tu trayecto diario."
-          },
-          {
-            "id": 3,
-            "nombre": "Recordatorio de pago de seguro vehicular",
-            "descripcion": "No olvides renovar tu seguro vehicular. Mantén protegido tu vehículo y a ti mismo en caso de accidentes o imprevistos en la carretera."
-          },
-          {
-            "id": 4,
-            "nombre": "Alerta de condiciones climáticas adversas",
-            "descripcion": "Se pronostican condiciones climáticas adversas en tu zona. Conduce con precaución y ajusta tu velocidad según las condiciones del camino."
-          },
-          {
-            "id": 5,
-            "nombre": "Notificación de cambio de horario en semáforos",
-            "descripcion": "Los horarios de funcionamiento de los semáforos han sido modificados en tu área. Presta atención a las señales y adapta tu conducción en consecuencia."
-          }
-        ]
-      },
-      {
-        "nombre": "Carlos Rodríguez",
-        "correo": "carlos@corre.com",
-        "contraseña": "qwerty",
-        "imagen": "assets/img/usuarios/2.jpg",
-        "notificaciones": [
-          {
-            "id": 1,
-            "nombre": "Alerta de control de alcoholemia",
-            "descripcion": "Se realizarán controles de alcoholemia en tu área. Conduce con responsabilidad y evita consecuencias legales por conducir bajo los efectos del alcohol."
-          },
-          {
-            "id": 2,
-            "nombre": "Recordatorio de revisión de neumáticos",
-            "descripcion": "Es momento de verificar la presión y el estado de tus neumáticos. Neumáticos en buen estado garantizan una mejor adherencia y seguridad en la carretera."
-          },
-          {
-            "id": 3,
-            "nombre": "Notificación de restricciones de estacionamiento",
-            "descripcion": "Se han implementado nuevas restricciones de estacionamiento en tu área. Consulta las señales y evita multas por estacionar en áreas prohibidas."
-          },
-          {
-            "id": 4,
-            "nombre": "Alerta de aumento de patrullaje policial",
-            "descripcion": "Se ha aumentado el patrullaje policial en tu zona. Conduce respetando las normas de tránsito y evita sanciones por infracciones."
-          },
-          {
-            "id": 5,
-            "nombre": "Recordatorio de uso del cinturón de seguridad",
-            "descripcion": "Recuerda utilizar siempre el cinturón de seguridad al conducir. Es una medida fundamental para tu seguridad y la de tus acompañantes."
-          }
-        ]
       }
+      
+      
     ]
   }
