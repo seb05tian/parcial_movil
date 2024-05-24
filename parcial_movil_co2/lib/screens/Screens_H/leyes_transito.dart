@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
-
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar2.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/botones/botones.dart';
-
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/cajasTexto/cajaDescripcion.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/list_abogado.dart';
 import 'package:parcial_movil_co2/screens/jurisdiccion.dart';
 
 class LeyesTransito extends StatelessWidget {
+  final String id;
+  final String descripcion;
+  final String pasosLegales;
+
+  LeyesTransito({
+    required this.id,
+    required this.descripcion,
+    required this.pasosLegales,
+  });
+
   static const String routename = "LeyesTransito";
 
   @override
@@ -21,14 +29,13 @@ class LeyesTransito extends StatelessWidget {
           child: Container(
             margin: const EdgeInsets.all(10),
             width: screenWidth,
-            
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
                   margin: const EdgeInsets.only(top: 20),
-                  child: const Text(
-                    'B10',
+                  child: Text(
+                    id,
                     style: TextStyle(
                       color: Color(0xFF392B54),
                       fontWeight: FontWeight.bold,
@@ -39,8 +46,7 @@ class LeyesTransito extends StatelessWidget {
                 const SizedBox(height: 10),
                 CajaDescripcion(
                     titulo: 'Descripcion',
-                    contenido:
-                        'kansldkasijdlak dksjandlkabidnsalkmdbiasom dlajndoaodksa',
+                    contenido: descripcion,
                     screenWidth: screenWidth,
                     screenHeight: screenHeight),
                 const SizedBox(
@@ -48,8 +54,7 @@ class LeyesTransito extends StatelessWidget {
                 ),
                 CajaDescripcion(
                     titulo: 'Procesos Legales',
-                    contenido:
-                        'kansldkasijdlak dkklmslkcnkdjasdkfbaskk sajdsdusad sdsiudosdosid soidnsod sodns dsudsa jdsnadmasoj duh asidsiaj osimdojdosmadjandisa skjnds dkjks disijd asu diaj ds adioidsnof s fiuos dfoj 9fsj kjsdskdnlad dsijadnsndniaus djsaidskjn sk dijukdojspd osd sod s dojs dsoj dsdk sld sdd skldsjandlkabidnsalkmdbiasom dlajndoaodksa',
+                    contenido: pasosLegales,
                     screenWidth: screenWidth,
                     screenHeight: screenHeight),
                 const SizedBox(
@@ -61,7 +66,6 @@ class LeyesTransito extends StatelessWidget {
                     Container(
                       width: screenWidth * 0.8,
                       height: screenHeight * 0.08,
-                      
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [

@@ -1,16 +1,52 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
-
+import 'package:flutter/services.dart' show rootBundle;
+import 'package:parcial_movil_co2/modelos/leyesTransito.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar2.dart';
 
-import 'package:parcial_movil_co2/screens/Screens_H/configuracion/buscador/message_field_box.dart';
-
-class BuscarLeyes extends StatelessWidget {
+class BuscarLeyes extends StatefulWidget {
   static const String routename = "BuscarLeyes";
+
+  @override
+  _BuscarLeyesState createState() => _BuscarLeyesState();
+}
+
+class _BuscarLeyesState extends State<BuscarLeyes> {
+  late List<LeyTransito> _leyes;
+  late List<LeyTransito> _filteredLeyes;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadLeyes();
+  }
+
+  Future<void> _loadLeyes() async {
+    final String data =
+        await rootBundle.loadString('assets/Data/leyesTransito.json');
+    final parsedData = json.decode(data);
+    final List<dynamic> leyesJson = parsedData['leyesTransito'];
+    setState(() {
+      _leyes = leyesJson.map((json) => LeyTransito.fromJson(json)).toList();
+      _filteredLeyes = List.from(_leyes);
+    });
+  }
+
+  void _filterLeyes(String keyword) {
+    setState(() {
+      _filteredLeyes = _leyes
+          .where((ley) =>
+              ley.nombre.toLowerCase().contains(keyword.toLowerCase()))
+          .toList();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     var screenSizeFont = MediaQuery.of(context).size.height;
+
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar2(context: context),
@@ -21,7 +57,7 @@ class BuscarLeyes extends StatelessWidget {
               Container(
                 height: screenHeight * 0.20,
                 width: screenWidth * 0.95,
-                child: const Column(
+                child: Column(
                   children: [
                     SizedBox(
                       height: 15,
@@ -30,7 +66,7 @@ class BuscarLeyes extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Leyes de Transito',
+                          'Leyes de Tránsito',
                           style: TextStyle(
                             color: Color(0xFF392B54),
                             fontWeight: FontWeight.bold,
@@ -45,90 +81,109 @@ class BuscarLeyes extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [MessageFieldBox()],
+                      children: [
+                        Expanded(
+                          child: TextField(
+                            onChanged: _filterLeyes,
+                            decoration: InputDecoration(
+                              hintText: 'Buscar por ley...',
+                              contentPadding: EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 15),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(25.0),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
               ),
               Expanded(
-                child: ListView.builder(
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    return Expanded(
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(
-                            vertical: 8, horizontal: 16),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              spreadRadius: 2,
-                              blurRadius: 5,
-                              offset: const Offset(0, 3),
+                child: _filteredLeyes.isEmpty
+                    ? Center(
+                        child: Text('No se encontraron leyes.'),
+                      )
+                    : ListView.builder(
+                        itemCount: _filteredLeyes.length,
+                        itemBuilder: (context, index) {
+                          final ley = _filteredLeyes[index];
+                          return Container(
+                            margin: const EdgeInsets.symmetric(
+                                vertical: 8, horizontal: 16),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 2,
+                                  blurRadius: 5,
+                                  offset: const Offset(0, 3),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: screenWidth * 0.9,
-                              height: screenHeight * 0.08,
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Container(
-                                    width: screenWidth * 0.12,
-                                    padding: const EdgeInsets.all(8),
-                                    decoration: const BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(10)),
-                                      color: Color.fromARGB(255, 139, 75, 223),
-                                    ),
-                                    child: const Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          'Art 1',
-                                          style: TextStyle(color: Colors.white),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: screenWidth * 0.9,
+                                  height: screenHeight * 0.08,
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Container(
+                                        width: screenWidth * 0.12,
+                                        padding: const EdgeInsets.all(8),
+                                        decoration: const BoxDecoration(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(10)),
+                                          color: Color.fromARGB(
+                                              255, 139, 75, 223),
                                         ),
-                                      ],
-                                    ),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              'Art ${ley.id}',
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Text(
+                                        ley.nombre,
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: screenSizeFont * 0.022,
+                                          color: Color(0xFF392B54),
+                                        ),
+                                      )
+                                    ],
                                   ),
-                                  Text(
-                                    'Ambito de Aplicacion',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: screenSizeFont * 0.022,
-                                      color: Color(0xFF392B54),
-                                    ),
-                                  )
-                                ],
-                              ),
+                                ),
+                                const Divider(),
+                                Container(
+                                  padding: const EdgeInsets.all(20),
+                                  width: screenWidth * 0.9,
+                                  child: Text(
+                                    ley.descripcion,
+                                    softWrap: true,
+                                    overflow: TextOverflow.visible,
+                                  ),
+                                )
+                              ],
                             ),
-                            const Divider(),
-                            Container(
-                              padding: const EdgeInsets.all(20),
-                              width: screenWidth * 0.9,
-                              child: const Text(
-                                'Sed ut perspiciatis unde wdboudwbiudwbiudwiubdwiuvdwiuvwdviudwviudwviuwdviudwvdwviuwdviudwviudwdwviudvwiuvdwvuidwviudwviuwdqui ratione',
-                                softWrap: true,
-                                overflow: TextOverflow.visible,
-                              ),
-                            )
-                          ],
-                        ),
+                          );
+                        },
                       ),
-                    );
-                  },
-                ),
               ),
             ],
           ),

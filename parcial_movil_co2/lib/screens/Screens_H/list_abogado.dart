@@ -1,19 +1,58 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
-
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar2.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/botones/botones.dart';
-import 'package:parcial_movil_co2/screens/Screens_H/configuracion/buscador/message_field_box.dart';
+import 'package:parcial_movil_co2/screens/chat.dart';
 import 'package:parcial_movil_co2/screens/register_abogados.dart';
+import 'package:parcial_movil_co2/modelos/abogado.dart';
 
-import '../chat.dart';
-
-class ListAbogado extends StatelessWidget {
+class ListAbogado extends StatefulWidget {
   static const String routename = "ListAbogado";
+
+  @override
+  _ListAbogadoState createState() => _ListAbogadoState();
+}
+
+class _ListAbogadoState extends State<ListAbogado> {
+  late List<Abogado> abogados;
+  late List<Abogado> filteredAbogados = [];
+
+  @override
+  void initState() {
+    super.initState();
+    abogados = [];
+    _loadAbogados();
+  }
+
+  Future<void> _loadAbogados() async {
+    final String data =
+        await DefaultAssetBundle.of(context).loadString('assets/Data/abogado.json');
+    final parsedData = json.decode(data);
+    final List<dynamic> abogadosJson = parsedData['abogado'];
+    setState(() {
+      abogados = abogadosJson.map((abogadoJson) => Abogado.fromJson(abogadoJson)).toList();
+      filteredAbogados = List.from(abogados);
+    });
+  }
+
+  void _filterAbogados(String keyword) {
+    setState(() {
+      if (keyword.isEmpty) {
+        filteredAbogados = List.from(abogados);
+      } else {
+        filteredAbogados = abogados
+            .where((abogado) => abogado.nombre.toLowerCase().contains(keyword.toLowerCase()))
+            .toList();
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     var screenSizeFont = MediaQuery.of(context).size.height;
+
     return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar2(context: context),
@@ -55,143 +94,137 @@ class ListAbogado extends StatelessWidget {
                     const SizedBox(
                       height: 35,
                     ),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [MessageFieldBox()],
-                    ),
                   ],
                 ),
               ),
               Expanded(
-                child: ListView.builder(
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    return Expanded(
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(
-                            vertical: 8, horizontal: 16),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              spreadRadius: 2,
-                              blurRadius: 5,
-                              offset: const Offset(0, 3),
-                            ),
-                          ],
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: TextField(
+                        onChanged: _filterAbogados,
+                        decoration: InputDecoration(
+                          hintText: 'Buscar por nombre de abogado...',
+                          contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(25.0),
+                          ),
                         ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              width: screenWidth * 0.9,
-                              height: screenHeight * 0.1,
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(50),
-                                      border: Border.all(
-                                        width: 1,
-                                        color: const Color(0xFF392B54),
-                                      ),
-                                      color: const Color(0xFF392B54),
-                                    ),
-
-                                    width: screenWidth * 0.25,
-                                    height: screenHeight *
-                                        0.19, // Esto también ocupará la mitad del ancho del Row
-                                    child: CircleAvatar(
-                                      radius: screenWidth *
-                                          0.125, // El radio del CircleAvatar es la mitad del ancho del contenedor
-                                      backgroundColor: Colors
-                                          .transparent, // Establece el color de fondo transparente
-                                      child: ClipOval(
-                                        child: Image.asset(
-                                          'assets/img/abogado.png',
-                                          fit: BoxFit
-                                              .cover, // Ajusta la imagen para que cubra el área del círculo
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Column(
-                                    children: [
-                                      Container(
-                                        margin: const EdgeInsets.only(top: 7),
-                                        child: Text(
-                                          'No aplica inmovilización',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: screenSizeFont * 0.022,
-                                            color: const Color.fromARGB(
-                                                255, 139, 75, 223),
-                                          ),
-                                        ),
-                                      ),
-                                      Container(
-                                        margin:
-                                            const EdgeInsets.only(right: 100),
-                                        child: const Row(
-                                          children: [
-                                            Icon(Icons.star,
-                                                color: Colors
-                                                    .yellow), // Estrella 1
-                                            Icon(Icons.star,
-                                                color: Colors
-                                                    .yellow), // Estrella 2
-                                            Icon(Icons.star,
-                                                color: Colors
-                                                    .yellow), // Estrella 3
-                                            Icon(Icons.star,
-                                                color: Colors
-                                                    .yellow), // Estrella 4
-                                            Icon(Icons.star,
-                                                color: Color.fromARGB(255, 161,
-                                                    158, 132)), // Estrella 5
-                                          ],
-                                        ),
-                                      )
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ),
-                            const Divider(),
-                            Container(
-                              padding: const EdgeInsets.all(20),
-                              width: screenWidth * 0.9,
-                              child: const Text(
-                                'Sed ut perspiciatis unde eatae vitae  sed quia consequuntur magni dolores eos wddwbdvwodwbiowdboudwbiudwbiudwiubdwiuvdwiuvwdviudwviudwviuwdviudwvdwviuwdviudwviudwdwviudvwiuvdwvuidwviudwviuwdqui ratione',
-                                softWrap: true,
-                                overflow: TextOverflow.visible,
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Button(
-                                  onPressed: () {
-                                    Navigator.pushReplacementNamed(
-                                context, ChatScreen.routename);
-                                  },
-                                  titulo: 'Contastar',
-                                  color:
-                                      const Color.fromARGB(255, 139, 75, 223),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: filteredAbogados.length,
+                        itemBuilder: (context, index) {
+                          final abogado = filteredAbogados[index];
+                          return Container(
+                            margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 2,
+                                  blurRadius: 5,
+                                  offset: const Offset(0, 3),
                                 ),
                               ],
                             ),
-                          ],
-                        ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                SizedBox(
+                                  width: screenWidth * 0.9,
+                                  height: screenHeight * 0.1,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(50),
+                                          border: Border.all(
+                                            width: 1,
+                                            color: const Color(0xFF392B54),
+                                          ),
+                                          color: const Color(0xFF392B54),
+                                        ),
+                                        width: screenWidth * 0.25,
+                                        height: screenHeight * 0.19,
+                                        child: CircleAvatar(
+                                          radius: screenWidth * 0.125,
+                                          backgroundColor: Colors.transparent,
+                                          child: ClipOval(
+                                            child: Image.asset(
+                                              abogado.imagen,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Column(
+                                        children: [
+                                          Container(
+                                            margin: const EdgeInsets.only(top: 7),
+                                            child: Text(
+                                              abogado.nombre,
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.w700,
+                                                fontSize: screenSizeFont * 0.022,
+                                                color: const Color.fromARGB(255, 139, 75, 223),
+                                              ),
+                                            ),
+                                          ),
+                                          Container(
+                                            margin: const EdgeInsets.only(right: 100),
+                                            child: Row(
+                                              children: List.generate(
+                                                abogado.puntuacion,
+                                                (index) => Icon(
+                                                  Icons.star,
+                                                  color: Colors.yellow,
+                                                ),
+                                              ),
+                                            ),
+                                          )
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                const Divider(),
+                                Container(
+                                  padding: const EdgeInsets.all(20),
+                                  width: screenWidth * 0.9,
+                                  child: Text(
+                                    abogado.descripcion,
+                                    softWrap: true,
+                                    overflow: TextOverflow.visible,
+                                  ),
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Button(
+                                      onPressed: () {
+                                        Navigator.pushReplacementNamed(
+                                          context, ChatScreen.routename);
+                                      },
+                                      titulo: 'Contastar',
+                                      color: const Color.fromARGB(255, 139, 75, 223),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          );
+                        },
                       ),
-                    );
-                  },
+                    ),
+                  ],
                 ),
               ),
             ],
