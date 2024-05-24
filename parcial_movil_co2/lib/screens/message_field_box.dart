@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MessageFieldBox extends StatelessWidget {
-  const MessageFieldBox({super.key});
+  const MessageFieldBox();
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class MessageFieldBox extends StatelessWidget {
         Container(
           margin: EdgeInsets.only(bottom: size.height * 0.01),
           decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 51, 167, 59),
+              color: Color(0xFF392B54),
               borderRadius: BorderRadius.circular(40),
               boxShadow: [
                 BoxShadow(

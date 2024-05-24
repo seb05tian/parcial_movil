@@ -20,11 +20,10 @@ class CustomAppBar2 extends StatelessWidget implements PreferredSizeWidget {
       decoration: _boxDecoration(),
       child: SafeArea(
         child: Container(
-          height: screenHeight * 0.35,
+          height: screenHeight * 0.165,
           width: screenWidth * 0.95,
           child: Column(
             children: [
-              const Titulo(),
               Row(
                 children: [
                   Container(
@@ -90,43 +89,15 @@ class Perfil extends StatelessWidget {
               const Column(
                 children: [
                   Text(
-                    'Hola, Sebastian',
-                    style: TextStyle(color: Colors.white, fontSize: 20.0),
+                    'Sebastian Campos',
+                    style: TextStyle(color: Colors.white, fontSize: 23.0),
                   ),
                   SizedBox(height: 5.0),
-                  Text(
-                    '¿Qué quieres hacer hoy?',
-                    style: TextStyle(color: Colors.white, fontSize: 14.0),
-                  ),
                 ],
               ),
             ],
           ),
         )
-      ],
-    );
-  }
-}
-
-class Titulo extends StatelessWidget {
-  const Titulo({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          padding: const EdgeInsets.only(top: 30),
-          child: const Text(
-            'TransitoNet',
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 40.0,
-            ),
-          ),
-        ),
       ],
     );
   }

@@ -21,9 +21,6 @@ class BuscarLeyes extends StatelessWidget {
               Container(
                 height: screenHeight * 0.20,
                 width: screenWidth * 0.95,
-                decoration: BoxDecoration(
-                  border: Border.all(width: 2, color: Colors.red),
-                ),
                 child: const Column(
                   children: [
                     SizedBox(
@@ -78,10 +75,6 @@ class BuscarLeyes extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
-                              decoration: BoxDecoration(
-                                  border: Border.all(
-                                width: 2,
-                              )),
                               width: screenWidth * 0.9,
                               height: screenHeight * 0.08,
                               child: Row(
@@ -123,8 +116,6 @@ class BuscarLeyes extends StatelessWidget {
                             const Divider(),
                             Container(
                               padding: const EdgeInsets.all(20),
-                              decoration:
-                                  BoxDecoration(border: Border.all(width: 2)),
                               width: screenWidth * 0.9,
                               child: const Text(
                                 'Sed ut perspiciatis unde wdboudwbiudwbiudwiubdwiuvdwiuvwdviudwviudwviuwdviudwvdwviuwdviudwviudwdwviudvwiuvdwvuidwviudwviuwdqui ratione',

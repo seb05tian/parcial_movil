@@ -14,7 +14,7 @@ class MyMessageBubble extends StatelessWidget {
                 color: Colors.black,
                 width: 0,
               ),
-              color: Color.fromARGB(255, 170, 255, 173),
+              color: Color(0xFF392B54),
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
@@ -27,7 +27,7 @@ class MyMessageBubble extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
             child: Text(
               'Que aprenderemos hoy ?',
-              style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+              style: TextStyle(color: Colors.white),
             ),
           ),
         ),

@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:parcial_movil_co2/screens/message_field_box.dart';
 
 import 'Screens_H/configuracion/appbar/custon_appBar2.dart';
-import 'Screens_H/configuracion/buscador/message_field_box.dart';
+
 import 'her_message_bubble.dart';
 import 'my_message_bubble.dart';
 
