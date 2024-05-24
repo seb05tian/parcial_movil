@@ -5,6 +5,8 @@ import 'package:parcial_movil_co2/screens/Screens_H/configuracion/botones/botone
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/buscador/message_field_box.dart';
 import 'package:parcial_movil_co2/screens/register_abogados.dart';
 
+import '../chat.dart';
+
 class ListAbogado extends StatelessWidget {
   static const String routename = "ListAbogado";
   @override
@@ -175,7 +177,10 @@ class ListAbogado extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Button(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pushReplacementNamed(
+                                context, ChatScreen.routename);
+                                  },
                                   titulo: 'Contastar',
                                   color:
                                       const Color.fromARGB(255, 139, 75, 223),

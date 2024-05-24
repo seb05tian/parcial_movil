@@ -5,6 +5,8 @@ import 'package:parcial_movil_co2/screens/Screens_H/configuracion/botones/botone
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/buscador/message_field_box.dart';
 import 'package:parcial_movil_co2/screens/derechos_deberes.dart';
 
+import 'leyes_transito.dart';
+
 class BuscarInfracciones extends StatelessWidget {
   static const String routename = "BuscarInfracciones";
 
@@ -89,50 +91,52 @@ class BuscarInfracciones extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  border: Border.all(
-                                width: 2,
-                              )),
-                              width: screenWidth * 0.9,
-                              height: screenHeight * 0.08,
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Container(
-                                    width: screenWidth * 0.12,
-                                    padding: const EdgeInsets.all(8),
-                                    decoration: const BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(10)),
-                                      color: Color.fromARGB(255, 139, 75, 223),
-                                    ),
-                                    child: const Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          'B10',
-                                          style: TextStyle(color: Colors.white),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Text(
-                                    'No aplica inmovilización',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: screenSizeFont * 0.022,
-                                      color: const Color.fromARGB(
-                                          255, 139, 75, 223),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
+                            GestureDetector(
+  onTap: () {
+   
+    Navigator.pushReplacementNamed(
+                              context, LeyesTransito.routename);
+  },
+  child: Container(
+    decoration: BoxDecoration(
+      border: Border.all(width: 2),
+    ),
+    width: screenWidth * 0.9,
+    height: screenHeight * 0.08,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Container(
+          width: screenWidth * 0.12,
+          padding: const EdgeInsets.all(8),
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            color: Color.fromARGB(255, 139, 75, 223),
+          ),
+          child: const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                'B10',
+                style: TextStyle(color: Colors.white),
+              ),
+            ],
+          ),
+        ),
+        Text(
+          'No aplica inmovilización',
+          style: TextStyle(
+            fontWeight: FontWeight.w700,
+            fontSize: screenSizeFont * 0.022,
+            color: const Color.fromARGB(255, 139, 75, 223),
+          ),
+        )
+      ],
+    ),
+  ),
+),
+
                             const Divider(),
                             Container(
                               padding: const EdgeInsets.all(20),

@@ -14,6 +14,8 @@ import 'package:parcial_movil_co2/screens/notificaciones.dart';
 import 'package:parcial_movil_co2/screens/register.dart';
 import 'package:parcial_movil_co2/screens/register_abogados.dart';
 
+import 'screens/chat.dart';
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key});
 
@@ -42,6 +44,7 @@ class MyApp extends StatelessWidget {
         Jurisdiccion.routename: (context) => Jurisdiccion(),
         Derechos_deberes.routename: (context) => Derechos_deberes(),
         Register_abogados.routename: (context) => Register_abogados(),
+        ChatScreen.routename: (context) => ChatScreen(),
       },
     );
   }
