@@ -1,5 +1,5 @@
 class Notificaciones {
-  late final int id;
+  final int id;
   final String nombre;
   final String descripcion;
 
@@ -9,7 +9,7 @@ class Notificaciones {
     required this.descripcion,
   });
 
-  factory Notificaciones.fromjson(Map<String, dynamic> json) {
+  factory Notificaciones.fromJson(Map<String, dynamic> json) {
     return Notificaciones(
       id: json['id'],
       nombre: json['nombre'],

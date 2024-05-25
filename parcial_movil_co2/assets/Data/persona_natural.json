@@ -1,0 +1,175 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Max Power",
+      "correo": "max@corre.com",
+      "contraseña": "123456",
+      "imagen": "assets/img/usuarios/1.jpg",
+      "roll": "personaN",
+      "notificaciones": [
+        {
+          "id": 1,
+          "nombre": "Recordatorio de renovación de licencia",
+          "descripcion": "Recuerda que tu licencia de conducir está próxima a vencer. Planifica su renovación para evitar multas y contratiempos."
+        },
+        {
+          "id": 2,
+          "nombre": "Alerta de cambio de normativa de tráfico",
+          "descripcion": "Se han implementado nuevas normativas de tránsito en tu área. Mantente informado para evitar infracciones y mantener la seguridad vial."
+        },
+        {
+          "id": 3,
+          "nombre": "Notificación de multa de velocidad",
+          "descripcion": "Has sido multado por exceder el límite de velocidad en una zona controlada. Revisa los detalles de la infracción y sigue los pasos legales correspondientes."
+        },
+        {
+          "id": 4,
+          "nombre": "Recordatorio de mantenimiento del vehículo",
+          "descripcion": "Es momento de realizar el mantenimiento preventivo de tu vehículo. Asegúrate de revisar frenos, luces, neumáticos y otros elementos para garantizar su buen funcionamiento."
+        },
+        {
+          "id": 5,
+          "nombre": "Alerta de congestión vehicular",
+          "descripcion": "Se reportan congestiones vehiculares en tu ruta habitual. Considera alternativas de desplazamiento o planifica tu viaje con anticipación para evitar retrasos."
+        }
+      ],
+      "mis_abogados": [
+        {
+          "id": 1,
+          "nombre": "María López",
+          "correo": "maria@abogados.com",
+          "contraseña": "abcdef",
+          "descripcion": "Experta en casos de exceso de velocidad y violaciones de límites de velocidad.",
+          "puntuacion": 4,
+          "imagen": "assets/img/abogado/5.png",
+          "roll": "abogado"
+        },
+        {
+          "id": 2,
+          "nombre": "Juan Martínez",
+          "correo": "juan@abogados.com",
+          "contraseña": "abcdef",
+          "descripcion": "Abogado especializado en casos de conducir bajo los efectos del alcohol y drogas.",
+          "puntuacion": 5,
+          "imagen": "assets/img/abogado/2.png",
+          "roll": "abogado"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Sebas",
+      "correo": "Sebas@corre.com",
+      "contraseña": "123456",
+      "imagen": "assets/img/usuarios/2.jpg",
+      "roll": "personaN",
+      "notificaciones": [
+        {
+          "id": 1,
+          "nombre": "Recordatorio de renovación de licencia",
+          "descripcion": "Recuerda que tu licencia de conducir está próxima a vencer. Planifica su renovación para evitar multas y contratiempos."
+        },
+        {
+          "id": 2,
+          "nombre": "Alerta de cambio de normativa de tráfico",
+          "descripcion": "Se han implementado nuevas normativas de tránsito en tu área. Mantente informado para evitar infracciones y mantener la seguridad vial."
+        },
+        {
+          "id": 3,
+          "nombre": "Notificación de multa de velocidad",
+          "descripcion": "Has sido multado por exceder el límite de velocidad en una zona controlada. Revisa los detalles de la infracción y sigue los pasos legales correspondientes."
+        },
+        {
+          "id": 4,
+          "nombre": "Recordatorio de mantenimiento del vehículo",
+          "descripcion": "Es momento de realizar el mantenimiento preventivo de tu vehículo. Asegúrate de revisar frenos, luces, neumáticos y otros elementos para garantizar su buen funcionamiento."
+        },
+        {
+          "id": 5,
+          "nombre": "Alerta de congestión vehicular",
+          "descripcion": "Se reportan congestiones vehiculares en tu ruta habitual. Considera alternativas de desplazamiento o planifica tu viaje con anticipación para evitar retrasos."
+        }
+      ],
+      "mis_abogados": [
+        {
+          "id": 0,
+          "nombre": "Fernando Ramos",
+          "correo": "fernando@abogados.com",
+          "contraseña": "abcdef",
+          "descripcion": "Especialista en infracciones de estacionamiento en lugares prohibidos, como zonas de carga y descarga o espacios reservados.",
+          "puntuacion": 3,
+          "imagen": "assets/img/abogado/1.jpg",
+          "roll": "abogado"
+        },
+        {
+          "id": 2,
+          "nombre": "Juan Martínez",
+          "correo": "juan@abogados.com",
+          "contraseña": "abcdef",
+          "descripcion": "Abogado especializado en casos de conducir bajo los efectos del alcohol y drogas.",
+          "puntuacion": 5,
+          "imagen": "assets/img/abogado/2.png",
+          "roll": "abogado"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nombre": "Maria",
+      "correo": "maria@corre.com",
+      "contraseña": "123456",
+      "imagen": "assets/img/usuarios/3.jpg",
+      "roll": "personaN",
+      "notificaciones": [
+        {
+          "id": 1,
+          "nombre": "Recordatorio de renovación de licencia",
+          "descripcion": "Recuerda que tu licencia de conducir está próxima a vencer. Planifica su renovación para evitar multas y contratiempos."
+        },
+        {
+          "id": 2,
+          "nombre": "Alerta de cambio de normativa de tráfico",
+          "descripcion": "Se han implementado nuevas normativas de tránsito en tu área. Mantente informado para evitar infracciones y mantener la seguridad vial."
+        },
+        {
+          "id": 3,
+          "nombre": "Notificación de multa de velocidad",
+          "descripcion": "Has sido multado por exceder el límite de velocidad en una zona controlada. Revisa los detalles de la infracción y sigue los pasos legales correspondientes."
+        },
+        {
+          "id": 4,
+          "nombre": "Recordatorio de mantenimiento del vehículo",
+          "descripcion": "Es momento de realizar el mantenimiento preventivo de tu vehículo. Asegúrate de revisar frenos, luces, neumáticos y otros elementos para garantizar su buen funcionamiento."
+        },
+        {
+          "id": 5,
+          "nombre": "Alerta de congestión vehicular",
+          "descripcion": "Se reportan congestiones vehiculares en tu ruta habitual. Considera alternativas de desplazamiento o planifica tu viaje con anticipación para evitar retrasos."
+        }
+      ],
+      "mis_abogados": [
+        {
+          "id": 6,
+          "nombre": "José Pérez",
+          "correo": "jose@abogados.com",
+          "contraseña": "abcdef",
+          "descripcion": "Abogado especializado en casos de circular sin placas de matrícula y otras infracciones relacionadas con la identificación del vehículo.",
+          "puntuacion": 3,
+          "imagen": "assets/img/abogado/4.jpg",
+          "roll": "abogado"
+        },
+        {
+          "id": 7,
+          "nombre": "Elena García",
+          "correo": "elena@abogados.com",
+          "contraseña": "abcdef",
+          "descripcion": "Conocedora de las leyes de tránsito relacionadas con el uso adecuado de las luces del vehículo.",
+          "puntuacion": 5,
+          "imagen": "assets/img/abogado/8.jpg",
+          "roll": "abogado"
+        }
+      ]
+    }
+  ]
+}
