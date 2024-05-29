@@ -20,14 +20,18 @@ class Homepage extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [Color(0xFFE6E6E6), Color(0xFFB6B6B6)],
-              ),
-            ),
-          ),
+  decoration: const BoxDecoration(
+    gradient: LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [
+        Colors.white, 
+        Colors.white, 
+      ],
+    ),
+  ),
+),
+
           Positioned(
             top: size.height * 0.10,
             left: size.width * 0.060,

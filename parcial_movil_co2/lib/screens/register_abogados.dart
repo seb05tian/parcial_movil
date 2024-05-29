@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:file_picker/file_picker.dart';
@@ -9,34 +8,37 @@ class Register_abogados extends StatefulWidget {
   static const String routename = "Register_abogados";
 
   @override
-  _Register_abogadosState createState() => _Register_abogadosState();
+  Register_abogadosState createState() => Register_abogadosState();
 }
 
-class _Register_abogadosState extends State<Register_abogados> {
+class Register_abogadosState extends State<Register_abogados> {
   File? _diplomaFile;
 
   @override
   Widget build(BuildContext context) {
+    // Obtén el tamaño de la pantalla
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: CustomAppBar2(context: context),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const SizedBox(height: 30.0),
+            SizedBox(height: size.height * 0.03),
             Center(
               child: Text(
                 'Registro de Abogado',
                 style: TextStyle(
                   color: Color(0xFF392B54),
                   fontWeight: FontWeight.bold,
-                  fontSize: 30.0,
+                  fontSize: size.width * 0.075,
                 ),
               ),
             ),
-            const SizedBox(height: 30.0),
+            SizedBox(height: size.height * 0.03),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30.0),
+              padding: EdgeInsets.symmetric(horizontal: size.width * 0.08),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -44,20 +46,20 @@ class _Register_abogadosState extends State<Register_abogados> {
                     'Diploma',
                     style: TextStyle(
                       color: Color(0xFF392B54),
-                      fontSize: 16.0,
+                      fontSize: size.width * 0.04,
                     ),
                   ),
-                  const SizedBox(height: 10),
-                  _buildDiplomaField(),
-                  const SizedBox(height: 30.0),
+                  SizedBox(height: size.height * 0.01),
+                  _buildDiplomaField(size),
+                  SizedBox(height: size.height * 0.03),
                   Text(
                     'Descripción',
                     style: TextStyle(
                       color: Color(0xFF392B54),
-                      fontSize: 16.0,
+                      fontSize: size.width * 0.04,
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: size.height * 0.01),
                   TextField(
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -65,6 +67,30 @@ class _Register_abogadosState extends State<Register_abogados> {
                       ),
                     ),
                   ),
+                  SizedBox(height: size.height * 0.08),
+                  Padding(
+            padding: EdgeInsets.all(size.width * 0.05),
+            child: Container(
+              height: size.height * 0.07,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: const Color(0xFF392B54),
+                borderRadius: BorderRadius.circular(size.height * 0.03),
+              ),
+              child: TextButton(
+                onPressed: () {
+                  
+                },
+                child: Text(
+                  'Finalizar registro',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: size.height * 0.025,
+                  ),
+                ),
+              ),
+            ),
+          ),
                 ],
               ),
             ),
@@ -74,12 +100,12 @@ class _Register_abogadosState extends State<Register_abogados> {
     );
   }
 
-  Widget _buildDiplomaField() {
+  Widget _buildDiplomaField(Size size) {
     return Row(
       children: [
         Expanded(
           child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(30.0),
@@ -103,7 +129,7 @@ class _Register_abogadosState extends State<Register_abogados> {
             ),
           ),
         ),
-        const SizedBox(width: 10),
+        SizedBox(width: size.width * 0.02),
       ],
     );
   }
