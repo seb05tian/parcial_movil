@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:parcial_movil_co2/Services/shared_prefs.dart';
+import 'package:parcial_movil_co2/screens/login.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key});
+  CustomAppBar({super.key});
 
   @override
   Size get preferredSize => const Size.fromHeight(230);
-
+  final prefs = UserPrefs();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -61,10 +63,10 @@ class Perfil extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 5.0),
-              const Column(
+              Column(
                 children: [
                   Text(
-                    'Hola, Sebastian',
+                    'Hola, ${user.nombre}',
                     style: TextStyle(color: Colors.white, fontSize: 20.0),
                   ),
                   SizedBox(height: 5.0),

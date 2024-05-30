@@ -1,8 +1,96 @@
 import 'package:flutter/material.dart';
+import 'package:parcial_movil_co2/Services/shared_prefs.dart';
+import 'package:parcial_movil_co2/main.dart';
+import 'package:parcial_movil_co2/modelos/abogado.dart';
+import 'package:parcial_movil_co2/modelos/notificaciones.dart';
+import 'package:parcial_movil_co2/modelos/personaN.dart';
+import 'package:parcial_movil_co2/modelos/usuario.dart';
 import 'package:parcial_movil_co2/screens/HomePage.dart';
 
-class login extends StatelessWidget {
+class login extends StatefulWidget {
   static const String routename = "login";
+
+  @override
+  State<login> createState() => _loginState();
+}
+
+late PersonaN user;
+
+class _loginState extends State<login> {
+  final prefs = UserPrefs();
+  String email = '';
+  String password = '';
+  List<Abogado> abogados = [];
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(seconds: 1), () {
+      session();
+    });
+  }
+
+  Future<void> session() async {
+    for (int i = 0; i < usersList.length; i++) {
+      if (usersList[i]['correo'] == prefs.email &&
+          usersList[i]['contraseña'] == prefs.password) {
+        user = PersonaN(
+            imagen: usersList[i]['imagen'],
+            abogados: <Abogado>[],
+            notificaciones: <Notificaciones>[],
+            id: usersList[i]['id'],
+            nombre: usersList[i]['nombre'],
+            correo: usersList[i]['correo'],
+            contrasena: usersList[i]['contraseña'],
+            rol: usersList[i]['roll']);
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute<void>(builder: (BuildContext context) {
+          return Homepage();
+        }), (Route<dynamic> route) => false);
+
+        break;
+      } else {
+        print('no hay sesion activa');
+      }
+    }
+  }
+
+  Future<void> login() async {
+    email = emailController.text;
+    password = passwordController.text;
+
+    for (int i = 0; i < usersList.length; i++) {
+      if (usersList[i]['correo'] == email &&
+          usersList[i]['contraseña'] == password) {
+        abogados = usersList[i]['mis_abogados'];
+        user = PersonaN(
+            imagen: usersList[i]['imagen'],
+            abogados: <Abogado>[],
+            notificaciones: <Notificaciones>[],
+            id: usersList[i]['id'],
+            nombre: usersList[i]['nombre'],
+            correo: usersList[i]['correo'],
+            contrasena: usersList[i]['contraseña'],
+            rol: usersList[i]['roll']);
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute<void>(builder: (BuildContext context) {
+          return Homepage();
+        }), (Route<dynamic> route) => false);
+
+        print('encontrado');
+        prefs.email = email;
+        prefs.password = password;
+        prefs.username = usersList[i]['nombre'];
+        prefs.image = usersList[i]['imagen'];
+        print(user);
+        break;
+      } else {
+        print('no encontrado');
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +169,8 @@ class login extends StatelessWidget {
                   ),
                 ],
               ),
-              child: const TextField(
+              child: TextField(
+                controller: emailController,
                 decoration: InputDecoration(
                   hintText: 'Nombre de usuario',
                   border: InputBorder.none,
@@ -120,7 +209,8 @@ class login extends StatelessWidget {
                   ),
                 ],
               ),
-              child: const TextField(
+              child: TextField(
+                controller: passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Contraseña',
@@ -142,7 +232,7 @@ class login extends StatelessWidget {
               ),
               child: TextButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, Homepage.routename);
+                  login();
                 },
                 child: Text(
                   'Iniciar sesión',
