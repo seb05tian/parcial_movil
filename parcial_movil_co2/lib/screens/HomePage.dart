@@ -3,6 +3,7 @@ import 'package:parcial_movil_co2/screens/Screens_H/buscar_infraciones_transito.
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/leyes_transito.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/list_abogado.dart';
+import 'package:parcial_movil_co2/screens/chat.dart';
 import 'package:parcial_movil_co2/screens/notificaciones.dart';
 
 import 'Screens_H/buscar_leyes_transito.dart';
@@ -151,6 +152,7 @@ class Homepage extends StatelessWidget {
                           ],
                         ),
                       ),
+                      
                     ],
                   ),
                   Row(

@@ -20,7 +20,6 @@ class _loginState extends State<login> {
   final prefs = UserPrefs();
   String email = '';
   String password = '';
-  List<Abogado> abogados = [];
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
@@ -36,19 +35,30 @@ class _loginState extends State<login> {
     for (int i = 0; i < usersList.length; i++) {
       if (usersList[i]['correo'] == prefs.email &&
           usersList[i]['contraseña'] == prefs.password) {
+        
+        List<Abogado> abogados = [];
+        for (var abogadoData in usersList[i]['mis_abogados']) {
+          Abogado abogado = Abogado.fromJson(abogadoData);
+          abogados.add(abogado);
+        }
+
         user = PersonaN(
-            imagen: usersList[i]['imagen'],
-            abogados: <Abogado>[],
-            notificaciones: <Notificaciones>[],
-            id: usersList[i]['id'],
-            nombre: usersList[i]['nombre'],
-            correo: usersList[i]['correo'],
-            contrasena: usersList[i]['contraseña'],
-            rol: usersList[i]['roll']);
+          imagen: usersList[i]['imagen'],
+          abogados: abogados, 
+          notificaciones: <Notificaciones>[],
+          id: usersList[i]['id'],
+          nombre: usersList[i]['nombre'],
+          correo: usersList[i]['correo'],
+          contrasena: usersList[i]['contraseña'],
+          rol: usersList[i]['roll'],
+        );
+
         Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute<void>(builder: (BuildContext context) {
-          return Homepage();
-        }), (Route<dynamic> route) => false);
+          MaterialPageRoute<void>(builder: (BuildContext context) {
+            return Homepage();
+          }),
+          (Route<dynamic> route) => false,
+        );
 
         break;
       } else {
@@ -64,20 +74,30 @@ class _loginState extends State<login> {
     for (int i = 0; i < usersList.length; i++) {
       if (usersList[i]['correo'] == email &&
           usersList[i]['contraseña'] == password) {
-        abogados = usersList[i]['mis_abogados'];
+        
+        List<Abogado> abogados = [];
+        for (var abogadoData in usersList[i]['mis_abogados']) {
+          Abogado abogado = Abogado.fromJson(abogadoData);
+          abogados.add(abogado);
+        }
+
         user = PersonaN(
-            imagen: usersList[i]['imagen'],
-            abogados: <Abogado>[],
-            notificaciones: <Notificaciones>[],
-            id: usersList[i]['id'],
-            nombre: usersList[i]['nombre'],
-            correo: usersList[i]['correo'],
-            contrasena: usersList[i]['contraseña'],
-            rol: usersList[i]['roll']);
+          imagen: usersList[i]['imagen'],
+          abogados: abogados, 
+          notificaciones: <Notificaciones>[],
+          id: usersList[i]['id'],
+          nombre: usersList[i]['nombre'],
+          correo: usersList[i]['correo'],
+          contrasena: usersList[i]['contraseña'],
+          rol: usersList[i]['roll'],
+        );
+
         Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute<void>(builder: (BuildContext context) {
-          return Homepage();
-        }), (Route<dynamic> route) => false);
+          MaterialPageRoute<void>(builder: (BuildContext context) {
+            return Homepage();
+          }),
+          (Route<dynamic> route) => false,
+        );
 
         print('encontrado');
         prefs.email = email;
@@ -99,7 +119,7 @@ class _loginState extends State<login> {
     return Scaffold(
       body: ListView(
         children: [
-          // Contenedor de fondo personalizado
+        
           Container(
             height: size.height * 0.001,
             decoration: const BoxDecoration(
@@ -129,7 +149,7 @@ class _loginState extends State<login> {
             ),
           ),
 
-          // Texto "TransitoNet" en el color especificado
+          
           Center(
             child: Text(
               'TransitoNet',
@@ -179,7 +199,7 @@ class _loginState extends State<login> {
             ),
           ),
 
-          // Texto "Contraseña" arriba del campo de texto
+          
           Padding(
             padding: EdgeInsets.fromLTRB(
                 size.width * 0.075, size.height * 0.02, size.width * 0.05, 0.0),
@@ -192,13 +212,13 @@ class _loginState extends State<login> {
             ),
           ),
 
-          // Campo de texto para la contraseña
+        
           Padding(
             padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
               decoration: BoxDecoration(
-                color: Colors.white,
+                                color: Colors.white,
                 borderRadius: BorderRadius.circular(size.height * 0.03),
                 boxShadow: [
                   BoxShadow(
@@ -220,7 +240,7 @@ class _loginState extends State<login> {
             ),
           ),
 
-          // Botón "Iniciar sesión"
+          
           Padding(
             padding: EdgeInsets.all(size.width * 0.05),
             child: Container(
