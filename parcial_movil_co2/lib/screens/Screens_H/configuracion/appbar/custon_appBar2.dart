@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:parcial_movil_co2/Services/shared_prefs.dart';
 import 'package:parcial_movil_co2/screens/HomePage.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/editar_perfil.dart';
+import 'package:parcial_movil_co2/screens/login.dart';
 
 class CustomAppBar2 extends StatelessWidget implements PreferredSizeWidget {
   final BuildContext context; // Agregamos el parámetro de contexto
 
-  const CustomAppBar2({super.key, required this.context});
-
+  CustomAppBar2({super.key, required this.context});
+  final prefs = UserPrefs();
   @override
   Size get preferredSize =>
       Size.fromHeight(MediaQuery.of(context).size.height * 0.3);
@@ -84,16 +86,16 @@ class Perfil extends StatelessWidget {
                   shape: BoxShape.circle,
                   border: Border.all(color: Colors.white, width: 2.0),
                 ),
-                child: const CircleAvatar(
+                child: CircleAvatar(
                   radius: 30.0,
-                  backgroundImage: AssetImage('assets/img/abogado.png'),
+                  backgroundImage: AssetImage(user.imagen),
                 ),
               ),
-              const SizedBox(width: 5.0),
-              const Column(
+              const SizedBox(width: 20),
+              Column(
                 children: [
                   Text(
-                    'Sebastian Campos',
+                    user.nombre,
                     style: TextStyle(color: Colors.white, fontSize: 23.0),
                   ),
                   SizedBox(height: 5.0),

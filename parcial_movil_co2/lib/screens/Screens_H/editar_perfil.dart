@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:parcial_movil_co2/screens/Screens_H/configuracion/appbar/custon_appBar2.dart';
+import 'package:parcial_movil_co2/Services/shared_prefs.dart';
+import 'package:parcial_movil_co2/screens/login.dart';
 
 class Editar_perfil extends StatelessWidget {
   static const String routename = "Editar_perfil";
+  final prefs = UserPrefs();
 
   @override
   Widget build(BuildContext context) {
@@ -150,9 +153,6 @@ class Editar_perfil extends StatelessWidget {
             ),
           ),
 
-          
-          
-
           Padding(
             padding: EdgeInsets.fromLTRB(30.0, 10.0, 20.0, 0.0),
             child: Text(
@@ -164,7 +164,6 @@ class Editar_perfil extends StatelessWidget {
             ),
           ),
 
-          
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Container(
@@ -192,25 +191,58 @@ class Editar_perfil extends StatelessWidget {
 
           Padding(
             padding: EdgeInsets.all(20.0),
-            child: Container(
-              height: 50.0,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Color(0xFF392B54),
-                borderRadius: BorderRadius.circular(size.height * 0.025),
-              ),
-              child: TextButton(
-                onPressed: () {
-                  // Aquí iría la lógica para guardar los cambios
-                },
-                child: Text(
-                  'Guardar cambios',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18.0,
+            child: Column(
+              children: [
+                Container(
+                  height: 50.0,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Color(0xFF392B54),
+                    borderRadius: BorderRadius.circular(size.height * 0.025),
+                  ),
+                  child: TextButton(
+                    onPressed: () {
+                      // Aquí iría la lógica para guardar los cambios
+                    },
+                    child: Text(
+                      'Guardar cambios',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18.0,
+                      ),
+                    ),
                   ),
                 ),
-              ),
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  height: 50.0,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Color(0xFF392B54),
+                    borderRadius: BorderRadius.circular(size.height * 0.025),
+                  ),
+                  child: TextButton(
+                    onPressed: () {
+                      prefs.email = '';
+                      prefs.password = '';
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(builder: (context) => login()),
+                        (Route<dynamic> route) => false,
+                      );
+                    },
+                    child: Text(
+                      'Cerrar seccion',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18.0,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ],

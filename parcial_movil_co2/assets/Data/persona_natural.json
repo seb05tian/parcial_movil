@@ -59,7 +59,7 @@
     },
     {
       "id": 2,
-      "nombre": "Sebas",
+      "nombre": "Sebas Campo",
       "correo": "Sebas@corre.com",
       "contraseña": "123456",
       "imagen": "assets/img/usuarios/2.jpg",

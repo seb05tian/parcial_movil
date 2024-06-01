@@ -70,7 +70,7 @@ class Perfil extends StatelessWidget {
                   backgroundImage: AssetImage(user.imagen),
                 ),
               ),
-              const SizedBox(width: 5.0),
+              const SizedBox(width: 10),
               Column(
                 children: [
                   Text(
